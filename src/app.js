@@ -1,6 +1,5 @@
-import 'bulma/bulma.sass'
-
 // Assets
+import './assets/styles/bulma.scss'
 import './assets/styles/style.scss'
 import './assets/js/main.js'
 
