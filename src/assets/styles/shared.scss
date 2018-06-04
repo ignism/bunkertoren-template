@@ -1,0 +1,14 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+
+@import './components/navbar.scss';
+@import './components/buttons.scss';
+
+a {
+    color: $black;
+} 
+
+a:hover, a:focus, a:active {
+    color: $red;
+}
+

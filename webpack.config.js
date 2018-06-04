@@ -1,13 +1,13 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV || 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    shared: './index.js',
+    shared: './shared.js',
     front: './front.js',
     woningen: './woningen.js'
   },
@@ -59,12 +59,12 @@ module.exports = {
       template: './front.html',
       filename: 'front.html',
       chunks: ['front', 'shared']
-    }), 
+    }),
     new HtmlWebpackPlugin({
       template: './woningen.html',
       filename: 'woningen.html',
       chunks: ['woningen', 'shared']
-    }),
-    new CleanWebpackPlugin(['dist'])
+    })
+    // new CleanWebpackPlugin(['dist'])
   ]
 }

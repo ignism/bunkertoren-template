@@ -1,0 +1,153 @@
+.navbar {
+    background: $ebb;
+    &.is-active {
+        background: $red;
+        .mobile-inschrijven {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &>.container {
+        .navbar-item .field {
+            align-items: center;
+        }
+        .navbar-brand {
+            height: 60px;
+            align-items: center;
+            .logo {
+                height: 19px;
+                width: auto;
+            }
+        }
+        .navbar-menu {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            height: 100vh;
+            box-shadow: none;
+            .field {
+                flex-direction: column;
+                height: calc(100vh - 96px);
+                justify-content: center;
+                .button-inschrijven {
+                    border: 0;
+                }
+            }
+            &.is-active {
+                background: $red;
+                .control {
+                    font-size: 30px;
+                    margin: 20px;
+                    margin-right: 0;
+                }
+            }
+            a:not(.button) {
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $black;
+                }
+            }
+        }
+        .navbar-burger {
+            width: 60px;
+            height: 60px;
+            margin-left: 0;
+            span {
+                width: 24px;
+                left: calc(50% - 12px);
+                &:nth-child(1) {
+                    transform-origin: 0;
+                    top: calc(50% - 12px);
+                }
+                &:nth-child(2) {
+                    top: calc(50% - 1px);
+                }
+                &:nth-child(3) {
+                    transform-origin: 0;
+                    top: calc(50% + 11px);
+                }
+            }
+            &.is-active {
+                span {
+                    &:nth-child(1) {
+                        transform: translateY(3px) translateX(3px) rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: translateY(-3px) translateX(3px) rotate(-45deg);
+                    }
+                }
+            }
+            &:hover {
+                background: transparent;
+                color: $black;
+            }
+        }
+        .mobile-inschrijven {
+            height: 25px;
+            margin-left: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .navbar>.container {
+        &.is-active {
+            background: $ebb;
+        }
+        .navbar-brand,
+        .navbar-brand {
+            margin-left: 0;
+            height: 80px;
+            .logo {
+                height: auto;
+            }
+        }
+        .navbar-menu,
+        .navbar-menu {
+            margin-right: 0;
+            height: 80px;
+            width: auto;
+            position: relative;
+            top: auto;
+            .field {
+                flex-direction: row;
+                height: auto;
+                .control {
+                    font-size: 0.9375rem;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    & :not(.button) span {
+                        padding: 0 1.5em;
+                    }
+                }
+                .button-inschrijven {
+                    border: 1px;
+                }
+            }
+            a:not(.button) {
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $red;
+                }
+            }
+            &.is-active {
+                background: transparent;
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .navbar,
+    .navbar-menu,
+    .navbar-start,
+    .navbar-end {
+        align-items: stretch;
+        display: flex;
+    }
+}

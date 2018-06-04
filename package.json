@@ -11,6 +11,7 @@
   "dependencies": {
     "bulma": "^0.7.1",
     "npm": "^6.1.0",
+    "scrollmagic": "^2.0.5",
     "url-loader": "^1.0.1"
   },
   "devDependencies": {

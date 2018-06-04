@@ -1,13 +1,6 @@
-// Assets
-import './assets/styles/bulma.scss'
-import './assets/styles/style.scss'
-import './assets/js/main.js'
-
-let template = require('./templates/index.twig')
+let template = require('./templates/front.twig')
 let html = template({
-  title: 'hello world'
+  title: 'Front Page'
 })
 
 document.write(html)
-
-console.log(html)
