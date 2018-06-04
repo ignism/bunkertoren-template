@@ -7,7 +7,9 @@ module.exports = {
   mode: 'production',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './app.js'
+    shared: './index.js',
+    front: './front.js',
+    woningen: './woningen.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -54,9 +56,14 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      chunks: ['app']
+      template: './front.html',
+      filename: 'front.html',
+      chunks: ['front', 'shared']
+    }), 
+    new HtmlWebpackPlugin({
+      template: './woningen.html',
+      filename: 'woningen.html',
+      chunks: ['woningen', 'shared']
     }),
     new CleanWebpackPlugin(['dist'])
   ]
