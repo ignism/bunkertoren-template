@@ -1,5 +1,10 @@
 .navbar {
+    @include transition(top);
+    
     background: $ebb;
+    &.is-pushed-up {
+        top: -60px;
+    }
     &.is-active {
         background: $red;
         .mobile-inschrijven {
@@ -94,49 +99,54 @@
 }
 
 @media screen and (min-width: 769px) {
-    .navbar>.container {
+    .navbar {
+        &.is-pushed-up {
+            top: -80px;
+        }
         &.is-active {
             background: $ebb;
         }
-        .navbar-brand,
-        .navbar-brand {
-            margin-left: 0;
-            height: 80px;
-            .logo {
-                height: auto;
+        &>.container {
+            .navbar-brand,
+            .navbar-brand {
+                margin-left: 0;
+                height: 80px;
+                .logo {
+                    height: auto;
+                }
             }
-        }
-        .navbar-menu,
-        .navbar-menu {
-            margin-right: 0;
-            height: 80px;
-            width: auto;
-            position: relative;
-            top: auto;
-            .field {
-                flex-direction: row;
-                height: auto;
-                .control {
-                    font-size: 0.9375rem;
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    & :not(.button) span {
-                        padding: 0 1.5em;
+            .navbar-menu,
+            .navbar-menu {
+                margin-right: 0;
+                height: 80px;
+                width: auto;
+                position: relative;
+                top: auto;
+                .field {
+                    flex-direction: row;
+                    height: auto;
+                    .control {
+                        font-size: 0.9375rem;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        & :not(.button) span {
+                            padding: 0 1.5em;
+                        }
+                    }
+                    .button-inschrijven {
+                        border: 1px;
                     }
                 }
-                .button-inschrijven {
-                    border: 1px;
+                a:not(.button) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $red;
+                    }
                 }
-            }
-            a:not(.button) {
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $red;
+                &.is-active {
+                    background: transparent;
                 }
-            }
-            &.is-active {
-                background: transparent;
             }
         }
     }

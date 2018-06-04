@@ -1,7 +1,9 @@
 @import 'colors.scss';
 @import 'fonts.scss';
+@import 'mixins.scss';
 
 @import './components/navbar.scss';
+@import './components/footer.scss';
 @import './components/buttons.scss';
 
 a {
@@ -12,3 +14,6 @@ a:hover, a:focus, a:active {
     color: $red;
 }
 
+.section {
+    min-height: 100vh;
+}

@@ -1,8 +1,20 @@
 {% extends './base.twig' %}
 {% block body %}
-    <section class="section" style="height: 200vh">
-        <div class="container">
-                {{ title }}
-        </div>
-    </section>    
+    
+    {% include './sections/splash-top.twig' %}
+
+    {% include './sections/text-left.twig' %}
+
+    {% include './sections/text-right.twig' %}
+
+    {% include './sections/splash-mid.twig' %}
+
+    {% include './sections/text-left.twig' %}
+
+    {% include './sections/usp-icons.twig' %}
+
+    {% include './sections/border-box.twig' %}
+
+    {% include './sections/news.twig' %}
+
 {% endblock %}
