@@ -5,6 +5,7 @@
 @import './components/navbar.scss';
 @import './components/footer.scss';
 @import './components/buttons.scss';
+@import './components/images.scss';
 
 a {
     color: $black;
@@ -14,6 +15,34 @@ a:hover, a:focus, a:active {
     color: $red;
 }
 
+.navbar {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
 .section {
     min-height: 100vh;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+//
+
+.splash {
+    .splash-body {
+        height: calc(100vh - 3rem);
+        position: relative;
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .button-lees-meer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
 }

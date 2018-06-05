@@ -1,0 +1,9 @@
+.background-image {
+    background-size: cover;
+    background-position: center;
+}
+
+.clipped-right {
+    -webkit-clip-path: polygon(0px 0px, 88% 0px, 88% 56%, 100% 100%, 0px 100%);
+    clip-path: polygon(0px 0px, 88% 0px, 88% 56%, 100% 100%, 0px 100%);
+}
