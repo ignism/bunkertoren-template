@@ -1,5 +1,5 @@
 
-// fix twig import, wait for load
+// fix twig import, wait for load shit
 if (window.attachEvent) {
   window.attachEvent('onload', windowLoaded)
 } else {
@@ -8,5 +8,5 @@ if (window.attachEvent) {
 
 function windowLoaded () {
   require('./navbar.js')
-  require('./footer.js')
+  require('./scroll.js')
 }
