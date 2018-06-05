@@ -9,4 +9,5 @@ if (window.attachEvent) {
 function windowLoaded () {
   require('./navbar.js')
   require('./scroll.js')
+  require('./siema.js')
 }

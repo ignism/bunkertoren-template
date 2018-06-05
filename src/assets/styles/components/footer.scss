@@ -2,7 +2,7 @@
     @include transition(all);
     position: fixed;
     top: auto;
-    bottom: -100%;
+    bottom: -150vh;
     min-height: 300px;
     width: 100%;
 
@@ -16,6 +16,7 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 8em;
+        padding: 0;
     }
 
     .logo {
@@ -38,7 +39,7 @@
     .footer {
         min-height: 100vh;
         z-index: 31;
-        top: 100vh;
+        top: 150vh;
         bottom: auto;
         &.is-active {
             top: 0;

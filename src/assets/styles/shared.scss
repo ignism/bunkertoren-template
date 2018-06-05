@@ -1,17 +1,19 @@
 @import 'colors.scss';
 @import 'fonts.scss';
 @import 'mixins.scss';
-
 @import './components/navbar.scss';
 @import './components/footer.scss';
 @import './components/buttons.scss';
 @import './components/images.scss';
-
+@import './sections/splash.scss';
+@import './sections/text-clipped-image.scss';
 a {
     color: $black;
-} 
+}
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
     color: $red;
 }
 
@@ -19,30 +21,82 @@ a:hover, a:focus, a:active {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+
 .section {
     min-height: 100vh;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 6rem 1.5rem;
+    >.container {
+        min-height: calc(100vh - 12rem);
+    }
 }
 
-//
+.content {
+    padding: 2rem;
+}
 
-.splash {
-    .splash-body {
-        height: calc(100vh - 3rem);
-        position: relative;
+@media (min-width: 1928px) {
+    .container.is-fluid {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
-        .content {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+.columns {
+    //margin: 1rem -0.75rem;
+}
+
+.align-clipping-left {
+    margin-left: 12%;
+}
+
+h1 {
+    font-family: 'SMMaxeville-Constructed';
+    font-size: 43.5px;
+    color: #000000;
+    letter-spacing: -0.5px;
+    line-height: 36.5px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: 'Chap-Regular';
+    font-size: 32px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+    max-width: 620px;
+    &::before {
+        content: '\2014';
+    }
+}
+
+@media (min-width: 769px) {
+    h1 {
+        font-family: 'SMMaxeville-Constructed';
+        font-size: 45px;
+        color: #000000;
+        letter-spacing: -0.75px;
+        line-height: 40px;
+        margin-bottom: 2rem;
+    }
+    .is-frontpage {
+        h1 {
+            font-family: 'SMMaxeville-Constructed';
+            font-size: 87px;
+            color: #000000;
+            letter-spacing: -1px;
+            line-height: 73px;
+            text-transform: uppercase;
         }
-
-        .button-lees-meer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-        }
+    }
+    h2 {
+        font-family: 'Chap-Regular';
+        font-size: 50px;
+        color: #000000;
+        letter-spacing: -0.83px;
+        line-height: 53px;
     }
 }

@@ -1,0 +1,78 @@
+.section.splash {
+    background: $ebb;
+    padding-bottom: 0;
+    padding-top: 0;
+    .splash-body {
+        height: 100vh;
+        position: relative;
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin-bottom: 0;
+            .aankondiging {
+                max-width: 540px;
+                font-family: 'Chap-Regular';
+                font-size: 25px;
+                color: #FFFFFF;
+                letter-spacing: -0.31px;
+                line-height: 24px;
+                margin-bottom: 1em;
+            }
+            .button {
+                color: white;
+                border-color: white;
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
+        }
+        .button-lees-meer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            .vertical-line {
+                height: 80px;
+                border-left: 1px solid white;
+                margin-left: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .splash {
+        .splash-body {
+            .content {
+                .aankondiging {
+                    font-family: 'Chap-Regular';
+                    font-size: 32px;
+                    color: #FFFFFF;
+                    letter-spacing: -0.5px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .splash {
+        .splash-body {
+            .content {
+                .aankondiging {
+                    font-family: 'Chap-Regular';
+                    font-size: 40px;
+                    color: #FFFFFF;
+                    letter-spacing: -0.5px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+}

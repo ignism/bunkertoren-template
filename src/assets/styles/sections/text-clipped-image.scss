@@ -1,0 +1,84 @@
+.section.text-clipped-image {
+    .container {
+        .columns.header {
+            min-height: 20vh;
+        }
+        .columns.body {
+            min-height: calc(100vh - 12rem);
+            margin-top: 0;
+            &.has-header {
+                min-height: calc(80vh - 12rem);
+                margin-top: -0.75rem;
+            }
+            .slider,
+            .slider * {
+                height: 100%;
+            }
+            .slider-column {
+                height: 60vw;
+            }
+            .text-column {
+                position: relative;
+                display: block;
+            }
+            .slider-navbar {
+                position: absolute;
+                bottom: 0.75rem;
+                width: 100%;
+                display: flex;
+                &.is-mobile {
+                    position: relative;
+                    margin-bottom: 4rem;
+                }
+            }
+            .slider-nav-spacer,
+            .slider-nav-item {
+                font-size: 20px;
+                //width: calc((100vw - 112px - 48px) / 12);
+                width: 100%;
+                margin: 0;
+                opacity: 0.3;
+                &.is-active {
+                    opacity: 1;
+                }
+                span {
+                    display: block;
+                    border-bottom: 1px solid black;
+                    margin-right: 1.5rem;
+                }
+                // &:last-child {
+                //     span {
+                //         margin-right: 0;
+                //     }
+                // }
+            }
+            p {
+                font-family: 'Chap-Regular';
+                font-size: 15px;
+                color: #000000;
+                letter-spacing: 0;
+                line-height: 23px;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .section.text-clipped-image {
+        .container {
+            .columns.body {
+                .slider-column {
+                    height: auto;
+                }
+            }
+            p {
+                font-family: 'Chap-Regular';
+                font-size: 18px;
+                color: #000000;
+                letter-spacing: 0;
+                line-height: 25px;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}

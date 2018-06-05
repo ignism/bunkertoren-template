@@ -3,13 +3,31 @@
     
     {% include './sections/splash-top.twig' with { 'image': 'http://placehold.it/1600x1200'} %}
 
-    {% include './sections/text-left.twig' %}
+    {% include './sections/text-left.twig' with {
+        'slides': [
+            {'image': 'http://placehold.it/1600x1200'},
+            {'image': 'http://placehold.it/1600x1200'}
+        ],
+        'header': 'BunkerToren is modern stedelijk wonen opnieuw gedefinieerd.',
+        'title': 'goed wonen',
+        'text': 'Het centrum van Eindhoven groeit. Dat wordt zichtbaar met de komst van De Bunkertoren; een woontoren van hoogwaardige kwaliteit, omringd door een groen stadpark en op steenworp afstand van Eindhoven Centraal Station. De Bunkertoren is een transformatie van het iconische bouwwerk, een voormalig studentencentrum, tot een woon gebied.'
+    } %}
 
-    {% include './sections/text-right.twig' %}
+    {% include './sections/text-right.twig' with {
+        'slides': [
+            {'image': 'http://placehold.it/1600x1200'},
+            {'image': 'http://placehold.it/1600x1200'},
+            {'image': 'http://placehold.it/1600x1200'},
+            {'image': 'http://placehold.it/1600x1200'}
+        ],
+        'background_color': 'light-green',
+        'title': 'groen park',
+        'text': 'De Bunkertoren, met haar omliggende park, creëert een geweldige groenbeleving in een stedelijke setting. Een unieke plek om te wonen en te verblijven. Het park telt een verscheidenheid aan planten - en boom soorten. Ook stimuleert het de bio-diversiteit. Een plek om te relaxen  en te ontmoeten.'
+    } %}
 
     {% include './sections/splash-mid.twig' %}
 
-    {% include './sections/text-left.twig' %}
+    {# {% include './sections/text-left.twig' %} #}
 
     {% include './sections/usp-icons.twig' %}
 
