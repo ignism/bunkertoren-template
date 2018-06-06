@@ -25,7 +25,10 @@
         'text': 'De Bunkertoren, met haar omliggende park, creëert een geweldige groenbeleving in een stedelijke setting. Een unieke plek om te wonen en te verblijven. Het park telt een verscheidenheid aan planten - en boom soorten. Ook stimuleert het de bio-diversiteit. Een plek om te relaxen  en te ontmoeten.'
     } %}
 
-    {% include './sections/splash-mid.twig' %}
+    {% include './sections/splash-mid.twig' with {
+        'large_portrait_image': 'http://placehold.it/2500x5000',
+        'floating_message': 'Transformatie van BunkerToren markeert een nieuw begin aan de Noordzijde van Eindhoven.'
+    } %}
 
     {# {% include './sections/text-left.twig' %} #}
 

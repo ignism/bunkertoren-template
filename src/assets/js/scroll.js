@@ -1,4 +1,12 @@
+// import 'imports-loader?define=>false!animation.gsap';
 import ScrollMagic from 'scrollmagic'
+// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+// import {TweenMax} from 'gsap/TweenMax';
+// import {TweenLite} from 'gsap/TweenLite';
+// import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import 'animation.gsap'
+import DocumentOffset from 'document-offset'
+import { TweenMax } from 'gsap'
 
 let controller = new ScrollMagic.Controller()
 
@@ -49,3 +57,45 @@ let footerScene = new ScrollMagic.Scene({
 footerScene.setClassToggle('#footer', 'is-active')
 
 footerScene.addTo(controller)
+
+let floatingMessage;
+let triggerFrom;
+let triggerTo;
+
+if (document.body.classList.contains('is-frontpage')) {
+  floatingMessage = document.querySelector('.floating-message')
+  triggerFrom = document.querySelector('.float-trigger[data-trigger-from]')
+  triggerTo = document.querySelector('.float-trigger[data-trigger-to]')
+
+  let tween = TweenMax.fromTo(floatingMessage, 1,
+    {marginTop: '-50px'},
+    {marginTop: '50px', ease: Circ.easeOut}
+  )
+
+  let floatingScene1 = new ScrollMagic.Scene({
+    triggerElement: triggerFrom,
+    duration: getUnpinPos(triggerFrom, triggerTo, floatingMessage)
+  })
+  floatingScene1.setPin(floatingMessage)
+  floatingScene1.on('progress', onProgress)
+  floatingScene1.setTween(tween)
+
+  let floatingScene2 = new ScrollMagic.Scene({
+    duration: 0,
+    triggerElement: triggerFrom
+  })
+
+  floatingScene2.setClassToggle(floatingMessage, 'is-active') // add class toggle
+
+  controller.addScene(floatingScene1)
+  controller.addScene(floatingScene2)
+}
+
+function getUnpinPos (from, to, self) {
+  let pos = Math.floor(DocumentOffset(to).top) - Math.floor(DocumentOffset(from).top) - Math.floor(self.offsetHeight)
+  return pos
+}
+
+function onProgress (event) {
+  event.currentTarget.duration(getUnpinPos(triggerFrom, triggerTo, floatingMessage))
+}
