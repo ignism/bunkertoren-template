@@ -1,55 +1,102 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const postcssPresetEnv = require('postcss-preset-env')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
-  context: path.resolve(__dirname, 'src'),
-  entry: {
-    shared: './shared.js',
-    front: './front.js',
-    about: './about.js',
-    content: './content.js',
-    appartments: './appartments.js',
-    singleAppartments: './single-appartments.js'
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
-  },
   module: {
-    rules: [{
-      test: /\.js$/,
-      include: path.resolve(__dirname, 'src'),
-      use: [{
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: ['env']
         }
-      }]
-    }, {
-      test: /\.(scss|sass|css)$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        'css-loader',
-        'postcss-loader',
-        'sass-loader'
-      ]
-    }, {
-      test: /\.(png|jpg|gif|svg)$/,
-      loader: 'file-loader?name=[path]/[name].[ext]'
-    }, {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file-loader?name=[path]/[name].[ext]'
-    }, {
-      test: /\.(otf|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file-loader?name=[path][name].[ext]'
-    }, {
-      test: /\.twig$/,
-      loader: 'twig-loader'
-    }]
+      },
+      {
+        test: /\.(sass|scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                postcssPresetEnv({ browsers: 'last 2 versions' })
+              ]
+            }
+          },
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.twig$/,
+        loader: 'twig-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader?name=[path]/[name].[ext]'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader?name=[path]/[name].[ext]'
+      },
+      {
+        test: /\.(otf|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader?name=[path][name].[ext]'
+      }
+    ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].bundle.css',
+      chunkFilename: '[id].css'
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'page-front.html',
+      chunks: ['pageFront', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'page-about.html',
+      chunks: ['pageAbout', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'page-appartments.html',
+      chunks: ['pageAppartments', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'single-appartments.html',
+      chunks: ['singleAppartments', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'page-content.html',
+      chunks: ['pageContent', 'shared']
+    })
+  ],
+  context: path.resolve(__dirname, 'src'),
+  entry: {
+    shared: './shared.js',
+    pageFront: './page-front.js',
+    pageAbout: './page-about.js',
+    pageAppartments: './page-appartments.js',
+    singleAppartments: './single-appartments.js',
+    pageContent: './page-content.js'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  mode: 'development',
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
@@ -59,41 +106,9 @@ module.exports = {
       'TimelineMax': path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
       'ScrollMagic': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
       'animation.gsap': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-      'debug.addIndicators': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
+      'debug.addIndicators': path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+      'base.twig': '../base.twig'
     }
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    }),
-    new HtmlWebpackPlugin({
-      template: './front.html',
-      filename: 'front.html',
-      chunks: ['front', 'shared']
-    }),
-    new HtmlWebpackPlugin({
-      template: './about.html',
-      filename: 'about.html',
-      chunks: ['about', 'shared']
-    }),
-    new HtmlWebpackPlugin({
-      template: './content.html',
-      filename: 'content.html',
-      chunks: ['content', 'shared']
-    }),
-    new HtmlWebpackPlugin({
-      template: './appartments.html',
-      filename: 'appartments.html',
-      chunks: ['appartments', 'shared']
-    }), 
-    new HtmlWebpackPlugin({
-      template: './single-appartments.html',
-      filename: 'single-appartments.html',
-      chunks: ['singleAppartments', 'shared']
-    })
-    // new CleanWebpackPlugin(['dist'])
-  ]
+    // modules: [path.resolve(__dirname, 'src/templates'), 'node_modules', path.resolve(__dirname, 'src')]
+  }
 }

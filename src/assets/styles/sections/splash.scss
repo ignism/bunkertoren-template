@@ -15,25 +15,26 @@
                 max-width: 540px;
                 font-family: 'Chap-Regular';
                 font-size: 25px;
-                color: #FFFFFF;
-                letter-spacing: -0.31px;
-                line-height: 24px;
+                color: $text-invert;
+                letter-spacing: -0.0125em;
+                line-height: 0.9375em;
                 margin-bottom: 1em;
             }
         }
-        .button-lees-meer {
+        .button-scroll-down  {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             text-align: center;
-            color: white;
+            color: $text-invert;
             span {
                 cursor: pointer;
+                text-transform: uppercase;
             }
             .vertical-line {
                 height: 80px;
-                border-left: 1px solid white;
+                border-left: 1px solid $text-invert;
                 margin-left: 50%;
             }
         }
@@ -41,15 +42,11 @@
 }
 
 @media (min-width: 769px) {
-    .splash {
+    .section.splash {
         .splash-body {
             .content {
                 .aankondiging {
-                    font-family: 'Chap-Regular';
                     font-size: 32px;
-                    color: #FFFFFF;
-                    letter-spacing: -0.5px;
-                    line-height: 38px;
                 }
             }
         }
@@ -57,15 +54,11 @@
 }
 
 @media (min-width: 1024px) {
-    .splash {
+    .section.splash {
         .splash-body {
             .content {
                 .aankondiging {
-                    font-family: 'Chap-Regular';
                     font-size: 40px;
-                    color: #FFFFFF;
-                    letter-spacing: -0.5px;
-                    line-height: 38px;
                 }
             }
         }

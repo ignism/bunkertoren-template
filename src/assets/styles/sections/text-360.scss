@@ -1,0 +1,26 @@
+.section.text-360 {
+    .clipped-360-column {
+        height: 60vw;
+    }
+    .clipped-360 {
+        height: 100%;
+    }
+}
+
+.embed .play-button {
+    background-color: $red !important;
+}
+
+@media (max-width: 768px) {
+    .section.splash {
+        .splash-body.splash-360 {
+            height: 65vh;
+        }
+    }
+
+    .section.text-clipped-360 {
+        .clipped-360-column {
+            height: 65vh;
+        }
+    }
+}

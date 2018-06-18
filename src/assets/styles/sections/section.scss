@@ -1,0 +1,13 @@
+.section {
+    min-height: 100vh;
+    padding: 6rem 1.5rem;
+    >.container {
+        min-height: calc(100vh - 12rem);
+    }
+    &.fit-height {
+        min-height: auto;
+        >.container {
+            min-height: auto;
+        }
+    }
+}

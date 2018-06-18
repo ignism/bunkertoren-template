@@ -23,6 +23,6 @@ contact.addEventListener('click', (event) => {
 
 window.onscroll = closeFooter
 
-function closeFooter() {
+function closeFooter () {
   document.body.classList.remove('has-footer-open')
 }

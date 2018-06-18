@@ -1,16 +1,26 @@
-<section class="section polygon-box fit-height {{ background_color }}">
-    <div class="container is-fluid">
-        <div class="polygon-wrapper">
-            <div class="polygon-content align-clipping-left">
-                {% block content %}{% endblock %}
-            </div>
+{% extends './section.twig' %}
 
-            <div class="polygon-top">
-                <div class="fill"></div>
-            </div>
-            <div class="polygon-bottom">
-                <div class="fill"></div>
-            </div>
+{% set section_classes = ['polygon-box', 'fit-height'] %}
+
+{% block content %}
+
+    <div class="polygon-wrapper">
+        <div class="polygon-content align-clipping-left">
+
+            {% if page_variation == 'front' %}
+                {% include './partials/polygon-box-front.twig' %}
+            {% else %}
+                {% include './partials/polygon-box-about.twig' %}
+            {% endif %}
+
+        </div>
+
+        <div class="polygon-top">
+            <div class="fill"></div>
+        </div>
+        <div class="polygon-bottom">
+            <div class="fill"></div>
         </div>
     </div>
-</section>
+
+{% endblock %}

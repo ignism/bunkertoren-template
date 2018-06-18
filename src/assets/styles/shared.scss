@@ -1,69 +1,21 @@
-@import 'colors.scss';
-@import 'fonts.scss';
-@import 'mixins.scss';
-@import './components/navbar.scss';
-@import './components/header.scss';
-@import './components/footer.scss';
-@import './components/buttons.scss';
-@import './components/images.scss';
-@import './components/appear.scss';
-@import './sections/splash.scss';
-@import './sections/splash-mid.scss';
-@import './sections/text-clipped-image.scss';
-@import './sections/portrait-splash.scss';
-@import './sections/usp-icons.scss';
-@import './sections/polygon-box.scss';
-@import './sections/news.scss';
-@import './sections/text.scss';
-@import './sections/partners.scss';
-@import './sections/appartments-list.scss';
-@import './sections/text-clipped-360.scss';
-@import './sections/plan.scss';
-@import './sections/appartment-details.scss';
+body {
+    color: $black;
+}
+
 a:not(.button) {
     transition: color 400ms ease;
     text-decoration: underline;
-    color: black;
+    color: $black;
     &:hover,
     &:focus,
     &:active {
-        color: black;
+        color: $black;
     }
 }
 
 ul, .content ul {
     list-style: none;
     margin-top: 0;
-}
-
-.navbar {
-    a:not(.button) {
-        text-decoration: none;
-        &:hover,
-        &:focus,
-        &:active {
-            color: $red;
-        }
-    }
-}
-
-.navbar {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-.section {
-    min-height: 100vh;
-    padding: 6rem 1.5rem;
-    >.container {
-        min-height: calc(100vh - 12rem);
-    }
-    &.fit-height {
-        min-height: auto;
-        >.container {
-            min-height: auto;
-        }
-    }
 }
 
 .content {
@@ -82,30 +34,40 @@ ul, .content ul {
     margin-left: 12%;
 }
 
+p, h1, h2, h3,
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-weight: 400;
+    color: $black;
+}
+
 p, a {
     font-family: 'Chap-Regular';
     font-size: 15px;
-    color: black;
+    color: $black;
     letter-spacing: 0;
     line-height: 1.38em;
 }
 
+.content h1,
 h1 {
-    font-family: 'SMMaxeville-Constructed';
+    font-family: 'SMMaxeville-Regular';
     font-size: 43.5px;
-    color: #000000;
-    letter-spacing: -0.5px;
-    line-height: 36.5px;
+    letter-spacing: -0.01em;
+    line-height: 0.84em;
     text-transform: uppercase;
     margin-bottom: 2rem;
+
+    .constructed {
+        font-family: 'SMMaxeville-Constructed';
+    }
 }
 
+.content h2,
 h2 {
     font-family: 'Chap-Regular';
     font-size: 32px;
-    color: #000000;
-    letter-spacing: -0.4px;
-    line-height: 30px;
+    letter-spacing: -0.0125em;
+    line-height: 0.9375em;
     margin-bottom: 2rem;
     max-width: 620px;
     &::before {
@@ -117,6 +79,7 @@ h2 {
     }
 }
 
+.content h3,
 h3 {
     font-size: 18px;
 }
@@ -130,27 +93,14 @@ h3 {
         font-size: 18px;
     }
     h1 {
-        font-family: 'SMMaxeville-Constructed';
         font-size: 45px;
-        color: #000000;
-        letter-spacing: -0.75px;
-        line-height: 40px;
         margin-bottom: 2rem;
     }
-    .is-front-page h1 {
-            font-family: 'SMMaxeville-Constructed';
+    .page-front h1 {
             font-size: 87px;
-            color: #000000;
-            letter-spacing: -1px;
-            line-height: 73px;
-            text-transform: uppercase;
     }
     h2 {
-        font-family: 'Chap-Regular';
         font-size: 50px;
-        color: #000000;
-        letter-spacing: -0.83px;
-        line-height: 53px;
     }
 
     h3 {

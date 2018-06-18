@@ -1,7 +1,6 @@
 import Siema from 'siema'
 
 let wrappers = document.querySelectorAll('.slider-wrapper')
-let ticker = 0
 
 wrappers.forEach(wrapper => {
   let slider
@@ -55,6 +54,4 @@ wrappers.forEach(wrapper => {
       }
     })
   }
-
-  ticker++
 })

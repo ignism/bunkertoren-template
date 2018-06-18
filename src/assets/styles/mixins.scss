@@ -1,3 +1,8 @@
-@mixin transition($property) {
-    transition: $property 800ms ease;
+@mixin transition($properties...) {
+    $all: ();
+    @for $i from 1 through length($properties) {
+        $all: append($all, append(nth($properties, $i), 800ms $easing), comma);
+    }
+    
+    transition: $all;
 }

@@ -1,5 +1,8 @@
 .navbar {
-    @include transition(top);
+    @include transition(top, background);
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
     &.is-pushed-up {
         top: -60px;
@@ -58,6 +61,7 @@
                 }
             }
             a:not(.button) {
+                text-decoration: none;
                 &:hover,
                 &:focus,
                 &:active {
@@ -143,9 +147,6 @@
     .navbar {
         &.is-pushed-up {
             top: -80px;
-        }
-        &.is-active {
-            background: $ebb;
         }
         &>.container {
             .navbar-brand {

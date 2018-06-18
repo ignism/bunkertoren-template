@@ -1,7 +1,7 @@
 import ScrollMagic from 'scrollmagic'
 import 'animation.gsap'
 import DocumentOffset from 'document-offset'
-import { TweenMax, ScrollToPlugin } from 'gsap/all'
+import { TweenMax, ScrollToPlugin } from 'gsap/all' // eslint-disable-line
 
 let controller = new ScrollMagic.Controller()
 
@@ -70,7 +70,7 @@ if (document.body.classList.contains('has-floating-message')) {
 
   let tween = TweenMax.fromTo(floatingMessage, 1,
     { marginTop: '-50px' },
-    { marginTop: '50px', ease: Circ.easeOut }
+    { marginTop: '50px', ease: Circ.easeOut } // eslint-disable-line
   )
 
   let floatingScene1 = new ScrollMagic.Scene({
@@ -103,19 +103,19 @@ function onProgress (event) {
 
 // FLOATER END -----------------------------------------------------------
 
-// LEES-MEER START -------------------------------------------------------
+// SCROLL-DOWN START -----------------------------------------------------
 
-if (document.querySelectorAll('#lees-meer').length > 0) {
-  let leesMeer = document.getElementById('lees-meer')
+if (document.querySelector('.button-scroll-down')) {
+  let leesMeer = document.querySelector('.button-scroll-down')
 
   leesMeer.addEventListener('click', event => {
-    let belowLanding = document.querySelector('.below-landing')
-    let top = DocumentOffset(belowLanding).top
-    TweenMax.to(window, 1, { scrollTo: top, ease: Cubic.easeInOut })
+    let afterSplash = document.querySelector('.after-splash')
+    let top = DocumentOffset(afterSplash).top
+    TweenMax.to(window, 1, { scrollTo: top, ease: Cubic.easeInOut })     // eslint-disable-line
   })
 }
 
-// LEES-MEER END ---------------------------------------------------------
+// SCROLL-DOWN END -------------------------------------------------------
 
 // APPEAR START ----------------------------------------------------------
 
@@ -127,7 +127,7 @@ if (appearElements.length > 0) {
     let parent = element.parentElement
 
     let clone = element.cloneNode(true)
-    
+
     let delay = element.dataset.appearDelay
 
     let spacer = document.createElement('div')
@@ -141,7 +141,7 @@ if (appearElements.length > 0) {
 
     let container = document.createElement('div')
     container.classList = element.classList
-    
+
     container.classList.add('appear-container')
     element.classList = ''
 
@@ -157,7 +157,7 @@ if (appearElements.length > 0) {
     let appearScene = new ScrollMagic.Scene({
       duration: 0,
       triggerElement: element,
-      offset: getOffset(),
+      offset: getOffset()
       // reverse: false
     })
 
@@ -173,9 +173,16 @@ function getOffset () {
 
 // APPEAR END ------------------------------------------------------------
 
-// NAVBAR START ----------------------------------------------------------
+// NAVBAR / FOOTER COLORING START ----------------------------------------
 
 let sections = document.querySelectorAll('.section')
+sections = Array.prototype.slice.call(sections)
+
+let header = document.querySelector('header.header')
+
+if (header) {
+  sections.unshift(header)
+}
 
 sections.forEach(section => {
   let backgroundScene = new ScrollMagic.Scene({
@@ -191,4 +198,15 @@ sections.forEach(section => {
   controller.addScene(backgroundScene)
 })
 
-// NAVBAR END ------------------------------------------------------------
+console.log(sections)
+
+let footerBackgroundClass = sections[sections.length - 1].dataset.backgroundColor
+if (!footerBackgroundClass) footerBackgroundClass = 'white'
+
+let footerPlaceholder = document.querySelector('.footer-placeholder')
+
+if (footerPlaceholder) {
+  footerPlaceholder.classList.add(footerBackgroundClass)
+}
+
+// NAVBAR / FOOTER COLORING END ------------------------------------------

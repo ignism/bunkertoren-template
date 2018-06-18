@@ -1,0 +1,22 @@
+@import '../../../node_modules/bulma/sass/utilities/initial-variables.sass';
+@import '../../../node_modules/bulma/sass/utilities/functions.sass';
+
+$black: hsl(0, 0%, 0%);
+$family-sans-serif: 'Chap-Light', sans-serif;
+$gap: 32px;
+$easing: cubic-bezier(0.5, 0.0, 0.0, 1.0);
+
+@import "../../../node_modules/bulma/sass/utilities/derived-variables";
+
+$text: $black;
+
+@import '../../../node_modules/bulma/sass/utilities/animations.sass';
+@import '../../../node_modules/bulma/sass/utilities/mixins.sass';
+@import '../../../node_modules/bulma/sass/utilities/controls.sass';
+@import '../../../node_modules/bulma/sass/base/_all';
+@import '../../../node_modules/bulma/sass/elements/_all';
+@import '../../../node_modules/bulma/sass/components/_all';
+@import '../../../node_modules/bulma/sass/grid/_all';
+@import '../../../node_modules/bulma/sass/layout/_all';
+
+// TODO: apply easing on every transition

@@ -1,6 +1,6 @@
-let template = require('./templates/single-appartments.twig')
+let template = require('./templates/pages/single-appartments.twig')
 let html = template({
-  title: 'hello world'
+  title: 'Single Appartments'
 })
 
 document.write(html)

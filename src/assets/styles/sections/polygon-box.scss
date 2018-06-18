@@ -1,5 +1,6 @@
 .section.polygon-box {
     padding: 1.5rem;
+
     .polygon-content {
         position: relative;
         z-index: +2;
@@ -27,37 +28,28 @@
     }
 
     p {
-        font-family: 'Chap-Regular';
         font-size: 14.4px;
-        color: #000000;
         letter-spacing: 0;
         line-height: 20px;
     }
     .button {
-        background: black;
+        background: $black;
         font-family: 'SMMaxeville-Constructed';
         font-size: 20px;
         height: 40px;
         padding: 0 1em;
-        color: white;
+        color: $text-invert;
         letter-spacing: 0;
         &:hover {
-            color: black;
+            color: $black;
             background: transparent;
         }
     }
     h1 {
-        font-family: 'SMMaxeville-Constructed';
         font-size: 64px;
-        color: #000000;
-        letter-spacing: -0.01em;
-        line-height: 0.83em;
     }
     h2 {
-        font-family: 'Chap-Light';
         font-size: 25px;
-        color: #000000;
-        letter-spacing: -0.31px;
         line-height: 25px;
         max-width: 100vw;
         margin-bottom: 0;
@@ -68,7 +60,7 @@
         // height: 100%;
     }
     .polygon-top {
-        background: black;
+        background: $black;
         position: absolute;
         z-index: +1;
         top: 0;
@@ -89,7 +81,7 @@
         }
     }
     .polygon-bottom {
-        background: black;
+        background: $black;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -127,9 +119,6 @@
         h2 {
             font-family: 'Chap-Light';
             font-size: 50px;
-            color: #000000;
-            letter-spacing: -0.83px;
-            line-height: 53px;
             max-width: 750px;
         }
         p {

@@ -5,22 +5,27 @@ $black: #000000;
 $gold: #DEC6A1;
 $light_gold: #F5E1C2;
 
-.red {
+.red,
+[data-background-color="red"] {
     background-color: $red;
 }
 
-.light-red {
+.light-red,
+[data-background-color="light-red"] {
     background-color: $ebb;
 }
 
-.light-green {
+.light-green,
+[data-background-color="light-green"] {
     background-color: $green;
 }
 
-.gold {
+.gold,
+[data-background-color="gold"] {
     background-color: $gold;
 }
 
-.light-gold {
+.light-gold,
+[data-background-color="light-gold"] {
     background-color: $light_gold;
 }

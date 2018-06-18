@@ -35,13 +35,13 @@
     }
 
     &.is-inverted {
-        color: white;
-        border-color: white;
+        color: $text-invert;
+        border-color: $text-invert;
         &:hover {
-            color: black;
+            color: $black;
         }
         &::before {
-            background: white;
+            background: $text-invert;
         }
     }
 
@@ -49,7 +49,7 @@
         color: $red;
         border-color: $red;
         &:hover {
-            color: white;
+            color: $text-invert;
         }
         &::before {
             background: $red;

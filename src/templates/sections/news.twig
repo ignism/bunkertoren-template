@@ -1,5 +1,9 @@
-<section class="section news fit-height">
-    <div class="container is-fluid">
+{% extends './section.twig' %}
+
+{% set section_classes = ['news', 'fit-height'] %}
+
+{% block content %}
+
         <div class="level">
             <div class="level-item level-left">
                 <h1 class="header">nieuws</h1>
@@ -25,5 +29,5 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
-</section>
+
+{% endblock %}
