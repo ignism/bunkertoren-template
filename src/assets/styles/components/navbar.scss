@@ -7,8 +7,13 @@
     &.is-pushed-up {
         top: -60px;
     }
+    .mobile-inschrijven {
+        font-size: 11px;
+        margin-left: auto;
+    }
     &.is-active {
-        background: $red;
+        transition-duration: 0ms;
+
         .mobile-inschrijven {
             opacity: 0;
             pointer-events: none;
@@ -26,10 +31,12 @@
             }
         }
         .navbar-brand {
+            position: relative;
             margin-right: 12%;
             height: 60px;
             align-items: center;
             margin-left: -0.75rem;
+            z-index: +1;
             .logo {
                 height: 19px;
                 width: auto;
@@ -38,10 +45,11 @@
         .navbar-menu {
             margin-right: 12%;
             position: fixed;
-            top: 60px;
+            top: 0;
             left: 0;
             width: 100%;
-            height: calc(100vh - 60px);
+            height: 100vh;
+            max-height: 100vh;
             box-shadow: none;
             .field {
                 flex-direction: column;
@@ -62,6 +70,7 @@
             }
             a:not(.button) {
                 text-decoration: none;
+                text-transform: uppercase;
                 &:hover,
                 &:focus,
                 &:active {
@@ -71,7 +80,7 @@
         }
         .navbar-burger {
             position: absolute;
-            right: 0;
+            right: -12%;
             width: 60px;
             height: 60px;
             margin-left: 0;
@@ -109,10 +118,6 @@
                 color: $black;
             }
         }
-        .mobile-inschrijven {
-            height: 25px;
-            margin-left: auto;
-        }
     }
 }
 
@@ -130,13 +135,16 @@
             }
             .navbar-menu,
             .navbar-menu.is-active {
-                top: 80px;
-                height: calc(100vh - 80px);
+                top: 0;
+                height: calc(100% + 80px);
                 .navbar-item {
                     padding-right: 0;
                 }
                 .control {
                     margin-right: 0;
+                    &:last-child {
+                        margin-left: 1.5em;
+                    }
                 }
             }
         }
@@ -173,6 +181,18 @@
                         }
                         a {
                             font-size: 0.9375rem;
+                        }
+
+                        .nav-inschrijven {
+                            color: $red;
+                            border-color: $red;
+
+                            &:hover {
+                                color: $text-invert;
+                            }
+                            &::before {
+                                background: $red;
+                            }
                         }
                     }
                     .button-inschrijven {
