@@ -1,6 +1,6 @@
 .navbar {
     @include transition(top);
-    background: $ebb;
+
     &.is-pushed-up {
         top: -60px;
     }
@@ -40,9 +40,6 @@
             width: 100%;
             height: calc(100vh - 60px);
             box-shadow: none;
-            .navbar-item {
-                padding-right: 0;
-            }
             .field {
                 flex-direction: column;
                 height: 100%;
@@ -54,9 +51,10 @@
             &.is-active {
                 background: $red;
                 .control {
-                    font-size: 30px;
                     margin: 20px;
-                    margin-right: 0;
+                    a {
+                        font-size: 30px;
+                    }
                 }
             }
             a:not(.button) {
@@ -126,9 +124,16 @@
                     height: auto;
                 }
             }
-            .navbar-menu {
+            .navbar-menu,
+            .navbar-menu.is-active {
                 top: 80px;
                 height: calc(100vh - 80px);
+                .navbar-item {
+                    padding-right: 0;
+                }
+                .control {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -160,11 +165,13 @@
                     flex-direction: row;
                     height: auto;
                     .control {
-                        font-size: 0.9375rem;
                         margin-top: 0;
                         margin-bottom: 0;
                         & :not(.button) span {
                             padding: 0 1.5em;
+                        }
+                        a {
+                            font-size: 0.9375rem;
                         }
                     }
                     .button-inschrijven {
@@ -172,9 +179,7 @@
                     }
                 }
                 a:not(.button) {
-                    &:hover,
-                    &:focus,
-                    &:active {
+                    &:hover {
                         color: $red;
                     }
                 }

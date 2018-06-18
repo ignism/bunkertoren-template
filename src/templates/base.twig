@@ -1,26 +1,7 @@
-{% include './components/navbar.twig' with {
-    'logo_url' : './assets/images/logo.svg',
-    'menu' : [
-        {
-            'title': 'woningen',
-            'class': ''
-        }, {
-            'title': 'over bunkertoren',
-            'class': ''
-        }, {
-            'title': 'contact',
-            'class': ''
-        }, {
-            'title': 'Inschrijven',
-            'class': 'button'
-        }
-    ]
-} %}
-
 {% block body %}{% endblock %}
 
-<section class="section" style="height: 200vh"></section>
-
 {% include './components/footer.twig' with {
-    'logo_url' : './assets/images/logo.svg'
+    'logo_url' : './assets/images/logo.svg',
+    'mail': 'info@bunkertoren.nl',
+    'phone': '+ 40 26 79 63 541'
 } %}

@@ -1,0 +1,17 @@
+.section.usp-icons {
+    p {
+        font-family: 'Chap-Light';
+        font-size: 18px;
+        color: #000000;
+        letter-spacing: 0;
+        line-height: 1.01em;
+    }
+}
+
+@media (min-width: 769px) {
+    .section.usp-icons {
+        p {
+            font-size: 25px;
+        }
+    }
+}

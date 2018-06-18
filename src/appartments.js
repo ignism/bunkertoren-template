@@ -1,4 +1,4 @@
-let template = require('./templates/index.twig')
+let template = require('./templates/appartments.twig')
 let html = template({
   title: 'hello world'
 })

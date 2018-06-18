@@ -1,0 +1,61 @@
+.section.appartments-list {
+    .list-header {
+        &::before {
+            content: '';
+        }
+    }
+    .table {
+        width: 100%;
+        font-family: 'Chap-Light';
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        line-height: 1.825em;
+        color: #000000;
+        tr:hover {
+            color: $red;
+            a {
+                color: $red;
+            }
+        }
+        a {
+            font-size: 15px;
+            text-decoration: none;
+        }
+        td {
+            border: 0;
+        }
+        tr:first-child {
+            border-top: 1px solid black;
+        }
+        tr {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .section.appartments-list {
+        .table {
+            font-size: 26px;
+            a {
+                font-size: 0.625em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .section.appartments-list {
+        .table {
+            font-size: 32px;
+        }
+    }
+}
+
+@media (min-width: 1216px) {
+    .section.appartments-list {
+        .table {
+            font-size: 40px;
+        }
+    }
+}

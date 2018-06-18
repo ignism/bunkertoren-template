@@ -1,0 +1,14 @@
+
+.section.text {
+    padding-bottom: 0;
+
+    >.container {
+        padding-bottom: 6rem;
+    }
+
+    &:not(:last-of-type) {
+        >.container {
+            border-bottom: 1px solid black;
+        }
+    }
+}

@@ -9,7 +9,10 @@ module.exports = {
   entry: {
     shared: './shared.js',
     front: './front.js',
-    woningen: './woningen.js'
+    about: './about.js',
+    content: './content.js',
+    appartments: './appartments.js',
+    singleAppartments: './single-appartments.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -72,9 +75,24 @@ module.exports = {
       chunks: ['front', 'shared']
     }),
     new HtmlWebpackPlugin({
-      template: './woningen.html',
-      filename: 'woningen.html',
-      chunks: ['woningen', 'shared']
+      template: './about.html',
+      filename: 'about.html',
+      chunks: ['about', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './content.html',
+      filename: 'content.html',
+      chunks: ['content', 'shared']
+    }),
+    new HtmlWebpackPlugin({
+      template: './appartments.html',
+      filename: 'appartments.html',
+      chunks: ['appartments', 'shared']
+    }), 
+    new HtmlWebpackPlugin({
+      template: './single-appartments.html',
+      filename: 'single-appartments.html',
+      chunks: ['singleAppartments', 'shared']
     })
     // new CleanWebpackPlugin(['dist'])
   ]

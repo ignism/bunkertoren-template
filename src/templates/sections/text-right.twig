@@ -1,15 +1,15 @@
-<section class="section text-clipped-image {{ background_color }}">
+<section class="section text-clipped-image {{ background_color }} {{ section_class }}" data-background-color="{% if background_color %}{{ background_color }}{% else %}white{% endif %}">
     <div class="container is-fluid">
         {% if header %}
             <div class="columns header">
                 <div class="column is-7-tablet is-8-desktop">
-                    <h2>{{ header }}</h2>
+                    <h2 class="{{ class }}">{{ header }}</h2>
                 </div>
             </div>
         {% endif %}
         <div class="columns body {% if header %}has-header{% endif %} slider-wrapper">
             <div class="column slider-column is-7-tablet is-8-desktop">
-                <div class="slider is-clipped-right">
+                <div class="slider {{ clipping }}">
                     {% for slide in slides %}
                         <div class="background-image" style="background-image: url('{{ slide.image }}')"></div>
                     {% endfor %}
@@ -28,12 +28,15 @@
                     {% endfor %}
                     {% endif %}
                 </div>
-                <h1>{{ title }}</h1>
-                <p>{{ text }}</p>
+                <div data-appear><h1>{{ title }}</h1></div>
+                
+                <div data-appear data-appear-delay="200ms"><p>{{ text }}</p></div>
             </div>
             <div class="column text-column is-hidden-mobile is-5-tablet is-4-desktop">
-                <h1>{{ title }}</h1>
-                <p>{{ text }}</p>
+                <div data-appear><h1>{{ title }}</h1></div>
+                
+                <div data-appear data-appear-delay="200ms"><p>{{ text }}</p></div>
+                
                 <div class="slider-navbar">
                     {% for slide in slides %}
                         <div data-slider-index="{{ loop.index - 1 }}" class="slider-nav-item {% if loop.index == 1 %}is-active{% endif %}">

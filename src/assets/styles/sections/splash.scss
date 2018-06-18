@@ -20,14 +20,6 @@
                 line-height: 24px;
                 margin-bottom: 1em;
             }
-            .button {
-                color: white;
-                border-color: white;
-                &:hover {
-                    background: white;
-                    color: black;
-                }
-            }
         }
         .button-lees-meer {
             position: absolute;
@@ -36,6 +28,9 @@
             width: 100%;
             text-align: center;
             color: white;
+            span {
+                cursor: pointer;
+            }
             .vertical-line {
                 height: 80px;
                 border-left: 1px solid white;

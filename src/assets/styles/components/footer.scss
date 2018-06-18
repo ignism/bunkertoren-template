@@ -1,10 +1,18 @@
+body.has-footer-open {
+    .footer {
+        bottom: 0;
+    }
+}
+
 .footer {
     @include transition(all);
+    background-color: $gold;
     position: fixed;
     top: auto;
     bottom: -150vh;
     min-height: 300px;
     width: 100%;
+    z-index: +4;
 
     &.is-active {
         bottom: 0;
@@ -15,7 +23,6 @@
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 8em;
         padding: 0;
     }
 
@@ -32,13 +39,16 @@
 @media (min-width: 769px) {
     .footer {
         bottom: -300px;
+        .content {
+            min-height: 8em;
+        }
     }
 }
 
 @media (max-width: 640px) {
     .footer {
         min-height: 100vh;
-        z-index: 31;
+        z-index: +31;
         top: 150vh;
         bottom: auto;
         &.is-active {
@@ -47,6 +57,7 @@
         
         .column {
             width: 100% !important;
+            margin-bottom: 1rem;
         }
     }
 }

@@ -7,6 +7,7 @@
     .large-portrait-image {
         width: 100%;
         height: auto;
+        display: block;
     }
 
     .container {
@@ -24,12 +25,15 @@
         top: 10%;
         opacity: 0;
         transition: opacity 400ms ease;
-        h2 {
-            line-height: 2em;
+        h1, h2 {
+            line-height: 1.5em;
             transition: line-height 400ms ease;
         }
         &.is-active {
             opacity: 1;
+            h1 {
+                line-height: 0.84em;
+            }
             h2 {
                 line-height: 1.06em;
             }

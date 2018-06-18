@@ -2,20 +2,49 @@
 @import 'fonts.scss';
 @import 'mixins.scss';
 @import './components/navbar.scss';
+@import './components/header.scss';
 @import './components/footer.scss';
 @import './components/buttons.scss';
 @import './components/images.scss';
+@import './components/appear.scss';
 @import './sections/splash.scss';
+@import './sections/splash-mid.scss';
 @import './sections/text-clipped-image.scss';
 @import './sections/portrait-splash.scss';
-a {
-    color: $black;
+@import './sections/usp-icons.scss';
+@import './sections/polygon-box.scss';
+@import './sections/news.scss';
+@import './sections/text.scss';
+@import './sections/partners.scss';
+@import './sections/appartments-list.scss';
+@import './sections/text-clipped-360.scss';
+@import './sections/plan.scss';
+@import './sections/appartment-details.scss';
+a:not(.button) {
+    transition: color 400ms ease;
+    text-decoration: underline;
+    color: black;
+    &:hover,
+    &:focus,
+    &:active {
+        color: black;
+    }
 }
 
-a:hover,
-a:focus,
-a:active {
-    color: $red;
+ul, .content ul {
+    list-style: none;
+    margin-top: 0;
+}
+
+.navbar {
+    a:not(.button) {
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $red;
+        }
+    }
 }
 
 .navbar {
@@ -28,6 +57,12 @@ a:active {
     padding: 6rem 1.5rem;
     >.container {
         min-height: calc(100vh - 12rem);
+    }
+    &.fit-height {
+        min-height: auto;
+        >.container {
+            min-height: auto;
+        }
     }
 }
 
@@ -43,12 +78,16 @@ a:active {
     }
 }
 
-.columns {
-    //margin: 1rem -0.75rem;
-}
-
 .align-clipping-left {
     margin-left: 12%;
+}
+
+p, a {
+    font-family: 'Chap-Regular';
+    font-size: 15px;
+    color: black;
+    letter-spacing: 0;
+    line-height: 1.38em;
 }
 
 h1 {
@@ -70,11 +109,26 @@ h2 {
     margin-bottom: 2rem;
     max-width: 620px;
     &::before {
-        content: '\2014';
+        content: '\2014 ';
+    }
+
+    &.no-limit {
+        max-width: 100%;
     }
 }
 
+h3 {
+    font-size: 18px;
+}
+
 @media (min-width: 769px) {
+    .avoid-navbar {
+        padding-top: 80px;
+    }
+
+    p, a {
+        font-size: 18px;
+    }
     h1 {
         font-family: 'SMMaxeville-Constructed';
         font-size: 45px;
@@ -83,15 +137,13 @@ h2 {
         line-height: 40px;
         margin-bottom: 2rem;
     }
-    .is-frontpage {
-        h1 {
+    .is-front-page h1 {
             font-family: 'SMMaxeville-Constructed';
             font-size: 87px;
             color: #000000;
             letter-spacing: -1px;
             line-height: 73px;
             text-transform: uppercase;
-        }
     }
     h2 {
         font-family: 'Chap-Regular';
@@ -99,5 +151,9 @@ h2 {
         color: #000000;
         letter-spacing: -0.83px;
         line-height: 53px;
+    }
+
+    h3 {
+        font-size: 25px;
     }
 }

@@ -6,6 +6,7 @@
             <div class="column is-6-mobile is-3-tablet">
                 <div class="content">
                     <img class="logo" src="{{ logo_url }}">
+                    <a class="is-hidden-mobile" href="">Disclaimer</a>
                 </div>
             </div>
             <div class="column is-6-mobile is-3-tablet">
@@ -15,8 +16,9 @@
                         en informatie
                     </p>
                     <p>
-                        info@bunketoren.nl<br>
-                        + 40 26 79 63 54
+                        <a href="mailto:{{ mail }}">{{ mail }}</a>
+                        <br>
+                        <a href="tel:{{ phone|replace(' ', '') }}">{{ phone }}</a>
                     </p>
                 </div>
             </div>
@@ -28,7 +30,9 @@
                     </p>
 
                     <p>
-                        Facebook Instagram
+                        <a href="">Facebook</a>
+                        <br>
+                        <a href="">Instagram</a>
                     </p>
                 </div>
             </div>
@@ -42,6 +46,9 @@
                         <a href="#" class="button">inschrijven</a>
                     </p>
                 </div>
+            </div>
+            <div class="column is-hidden-tablet">
+                <a class="" href="">Disclaimer</a>
             </div>
         </div>
     </div>

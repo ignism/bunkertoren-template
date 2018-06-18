@@ -1,7 +1,7 @@
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top {{ background_color }}" role="navigation" aria-label="main navigation">
     <div class="container is-fluid">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="{% if back_link %}{{ back_link }}{% else %}front.html{% endif %}">
                 <img class="logo" src="{{ logo_url }}">
             </a>
 
@@ -21,7 +21,7 @@
                     <div class="field is-grouped">
                         {% for item in menu %}
                         <p class="control">
-                            <a class="{{ item.class|e }}" target="_blank" href="#">
+                            <a data-nav-{{ item.title }} class="{{ item.class|e }}" href="{{ item.link }}">
                                 <span>
                                     {{ item.title|e }}
                                 </span>

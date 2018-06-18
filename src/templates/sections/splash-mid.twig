@@ -3,8 +3,18 @@
     <div class="container is-fluid">
         <div class="float-trigger" data-trigger-from></div>
         <div class="floating-message">
-            <h2>{{ floating_message }}</h2>
-            <a href="#" class="button">geschiedenis</a>
+            {% if (floating_h1) %} 
+                <h1>{{ floating_h1 }}</h1>
+           {% endif %}
+           {% if (floating_h2) %} 
+                <h2>{{ floating_h2 }}</h2>
+           {% endif %}
+           {% if (floating_p) %} 
+                <p>{{ floating_p }}</p>
+           {% endif %}
+           {% if (button) %} 
+                <a href="#" class="button is-inverted">{{ button }}</a>
+           {% endif %}
         </div>
         <div class="float-trigger" data-trigger-to></div>
     </div>

@@ -1,6 +1,13 @@
 .background-image {
     background-size: cover;
     background-position: center;
+
+    .placeholder {
+        width: 100%;
+        height: auto;
+        display: block;
+        visibility: hidden;
+    }
 }
 
 .is-clipped-left {
@@ -11,4 +18,27 @@
 .is-clipped-right {
     -webkit-clip-path: polygon(0px 0px, 88% 0px, 88% 56%, 100% 100%, 0px 100%);
     clip-path: polygon(0px 0px, 88% 0px, 88% 56%, 100% 100%, 0px 100%);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.svg-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
 }

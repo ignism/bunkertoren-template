@@ -1,16 +1,11 @@
-// import 'imports-loader?define=>false!animation.gsap';
 import ScrollMagic from 'scrollmagic'
-// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
-// import {TweenMax} from 'gsap/TweenMax';
-// import {TweenLite} from 'gsap/TweenLite';
-// import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import 'animation.gsap'
 import DocumentOffset from 'document-offset'
-import { TweenMax } from 'gsap'
+import { TweenMax, ScrollToPlugin } from 'gsap/all'
 
 let controller = new ScrollMagic.Controller()
 
-// Navbar
+// NAVBAR START ----------------------------------------------------------
 
 let navbar = document.querySelector('.navbar')
 let i1 = 0
@@ -47,7 +42,9 @@ function checkIfMouseIsNear (event) {
 
 navbarScene.addTo(controller)
 
-// Footer
+// NAVBAR END ------------------------------------------------------------
+
+// FOOTER START ----------------------------------------------------------
 
 let footerScene = new ScrollMagic.Scene({
   triggerElement: '.footer-placeholder',
@@ -58,18 +55,22 @@ footerScene.setClassToggle('#footer', 'is-active')
 
 footerScene.addTo(controller)
 
-let floatingMessage;
-let triggerFrom;
-let triggerTo;
+// FOOTER END ------------------------------------------------------------
 
-if (document.body.classList.contains('is-frontpage')) {
+// FLOATER START ---------------------------------------------------------
+
+let floatingMessage
+let triggerFrom
+let triggerTo
+
+if (document.body.classList.contains('has-floating-message')) {
   floatingMessage = document.querySelector('.floating-message')
   triggerFrom = document.querySelector('.float-trigger[data-trigger-from]')
   triggerTo = document.querySelector('.float-trigger[data-trigger-to]')
 
   let tween = TweenMax.fromTo(floatingMessage, 1,
-    {marginTop: '-50px'},
-    {marginTop: '50px', ease: Circ.easeOut}
+    { marginTop: '-50px' },
+    { marginTop: '50px', ease: Circ.easeOut }
   )
 
   let floatingScene1 = new ScrollMagic.Scene({
@@ -99,3 +100,95 @@ function getUnpinPos (from, to, self) {
 function onProgress (event) {
   event.currentTarget.duration(getUnpinPos(triggerFrom, triggerTo, floatingMessage))
 }
+
+// FLOATER END -----------------------------------------------------------
+
+// LEES-MEER START -------------------------------------------------------
+
+if (document.querySelectorAll('#lees-meer').length > 0) {
+  let leesMeer = document.getElementById('lees-meer')
+
+  leesMeer.addEventListener('click', event => {
+    let belowLanding = document.querySelector('.below-landing')
+    let top = DocumentOffset(belowLanding).top
+    TweenMax.to(window, 1, { scrollTo: top, ease: Cubic.easeInOut })
+  })
+}
+
+// LEES-MEER END ---------------------------------------------------------
+
+// APPEAR START ----------------------------------------------------------
+
+let appearElements = document.querySelectorAll('[data-appear]')
+
+if (appearElements.length > 0) {
+  // create containers
+  appearElements.forEach(element => {
+    let parent = element.parentElement
+
+    let clone = element.cloneNode(true)
+    
+    let delay = element.dataset.appearDelay
+
+    let spacer = document.createElement('div')
+    spacer.classList.add('appear-spacer')
+    spacer.appendChild(clone)
+
+    let animator = document.createElement('div')
+    animator.classList.add('appear-animator')
+    animator.appendChild(element)
+    animator.style.transitionDelay = delay
+
+    let container = document.createElement('div')
+    container.classList = element.classList
+    
+    container.classList.add('appear-container')
+    element.classList = ''
+
+    container.appendChild(spacer)
+    container.appendChild(animator)
+
+    parent.appendChild(container)
+  })
+
+  let animators = document.querySelectorAll('.appear-animator')
+  // attach scroll effects
+  animators.forEach(element => {
+    let appearScene = new ScrollMagic.Scene({
+      duration: 0,
+      triggerElement: element,
+      offset: getOffset(),
+      // reverse: false
+    })
+
+    appearScene.setClassToggle(element, 'is-active') // add class toggle
+
+    controller.addScene(appearScene)
+  })
+}
+
+function getOffset () {
+  return window.innerHeight / -4
+}
+
+// APPEAR END ------------------------------------------------------------
+
+// NAVBAR START ----------------------------------------------------------
+
+let sections = document.querySelectorAll('.section')
+
+sections.forEach(section => {
+  let backgroundScene = new ScrollMagic.Scene({
+    duration: section.clientHeight,
+    triggerElement: section,
+    triggerHook: 'onLeave'
+  })
+
+  let backgroundClass = section.dataset.backgroundColor
+  if (!backgroundClass) backgroundClass = 'white'
+  backgroundScene.setClassToggle(navbar, backgroundClass)
+
+  controller.addScene(backgroundScene)
+})
+
+// NAVBAR END ------------------------------------------------------------

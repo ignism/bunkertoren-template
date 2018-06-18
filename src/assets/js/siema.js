@@ -24,9 +24,6 @@ wrappers.forEach(wrapper => {
     }
   }
 
-  console.log(slider)
-  console.log(navItems)
-
   const siema = new Siema({
     selector: slider,
     duration: 400,

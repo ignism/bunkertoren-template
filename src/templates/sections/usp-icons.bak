@@ -1,0 +1,55 @@
+<section class="section usp-icons fit-height">
+    <div class="container is-fluid">
+        <div class="columns is-multiline">
+            <div class="column is-4 is-offset-1">
+                <div class="level is-mobile">
+                    <div class="level-item level-right">
+                        <img class="usp-icon" src="{{ usp_icon_green }}" alt=""></div>
+                        <div class="level-item level-center"><img src="{{ usp_arrow }}" alt=""></div>
+                    <div class="level-item level-left">
+                        <p>Wonen in een
+                            <br>groen stadspark
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4 is-offset-1">
+                <div class="level is-mobile">
+                    <div class="level-item level-right">
+                        <img class="usp-icon" src="{{ usp_icon_sustainability }}" alt=""></div>
+                        <div class="level-item level-center"><img src="{{ usp_arrow }}" alt=""></div>
+                    <div class="level-item level-left">
+                        <p>Duurzaam
+                            <br>en circulair
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4 is-offset-1">
+                <div class="level is-mobile">
+                    <div class="level-item level-right">
+                        <img class="usp-icon" src="{{ usp_icon_location }}" alt=""></div>
+                        <div class="level-item level-center"><img src="{{ usp_arrow }}" alt=""></div>
+                    <div class="level-item level-left">
+                        <p>Dichtbij het
+                            <br>Centrum
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4 is-offset-1">
+                <div class="level is-mobile">
+                    <div class="level-item level-right">
+                        <img class="usp-icon" src="{{ usp_icon_community }}" alt=""></div>
+                        <div class="level-item level-center"><img src="{{ usp_arrow }}" alt=""></div>
+                    <div class="level-item level-left">
+                        <p>Onderdeel van
+                            <br>een community
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

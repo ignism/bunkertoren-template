@@ -2,6 +2,12 @@ $red: #E7413A;
 $ebb: #EAE2E1;
 $green: #D3E8D5;
 $black: #000000;
+$gold: #DEC6A1;
+$light_gold: #F5E1C2;
+
+.red {
+    background-color: $red;
+}
 
 .light-red {
     background-color: $ebb;
@@ -9,4 +15,12 @@ $black: #000000;
 
 .light-green {
     background-color: $green;
+}
+
+.gold {
+    background-color: $gold;
+}
+
+.light-gold {
+    background-color: $light_gold;
 }

@@ -13,3 +13,16 @@ burger.addEventListener('click', (event) => {
     navbar.classList.add('is-active')
   }
 })
+
+let contact = document.querySelector('[data-nav-contact]')
+
+contact.addEventListener('click', (event) => {
+  event.preventDefault()
+  document.body.classList.toggle('has-footer-open')
+})
+
+window.onscroll = closeFooter
+
+function closeFooter() {
+  document.body.classList.remove('has-footer-open')
+}
