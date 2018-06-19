@@ -115,6 +115,25 @@ if (document.querySelector('.button-scroll-down')) {
   })
 }
 
+let urlVariables = getUrlVariables()
+
+if (Object.keys(urlVariables).length) {
+  if (urlVariables.jump) {
+    let jump = '.' + urlVariables.jump
+    let target = document.querySelector(jump)
+    let top = DocumentOffset(target).top
+    TweenMax.to(window, 1, { scrollTo: top, ease: Cubic.easeInOut })
+  }
+}
+
+function getUrlVariables () {
+  var variables = {}
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    variables[key] = value
+  })
+  return variables
+}
+
 // SCROLL-DOWN END -------------------------------------------------------
 
 // APPEAR START ----------------------------------------------------------

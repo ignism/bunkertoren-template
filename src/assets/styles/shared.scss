@@ -23,11 +23,12 @@ ul, .content ul {
     padding: 2rem;
 }
 
-@media (min-width: 1928px) {
-    .container.is-fluid {
-        max-width: 1800px;
-        margin-left: auto;
-        margin-right: auto;
+.has-extra-gutter {
+    &-left {
+        margin-left: 1rem;
+    }
+    &-right {
+        margin-right: 1rem;
     }
 }
 
@@ -98,7 +99,7 @@ h3 {
         margin-bottom: 2rem;
     }
     .page-front h1 {
-            font-size: 87px;
+            font-size: 58px;
     }
     h2 {
         font-size: 50px;
@@ -106,5 +107,25 @@ h3 {
 
     h3 {
         font-size: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-front h1 {
+            font-size: 64px;
+    }
+}
+
+@media (min-width: 1216px) {
+    .page-front h1 {
+            font-size: 87px;
+    }
+}
+
+@media (min-width: 1928px) {
+    .container.is-fluid {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

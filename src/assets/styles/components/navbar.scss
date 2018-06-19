@@ -157,8 +157,10 @@
             top: -80px;
         }
         &>.container {
+            display: flex;
+            
             .navbar-brand {
-                //margin-left: auto;
+                margin-right: 0;
                 height: 80px;
                 .logo {
                     height: auto;
@@ -166,6 +168,10 @@
             }
             .navbar-menu {
                 //margin-right: auto;
+                display: flex;
+                flex-grow: 1;
+                flex-shrink: 0;
+            
                 height: 80px;
                 width: auto;
                 position: relative;
@@ -207,6 +213,9 @@
                 &.is-active {
                     background: transparent;
                 }
+            }
+            .navbar-burger {
+                display: none;
             }
         }
     }
