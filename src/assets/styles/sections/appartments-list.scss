@@ -7,7 +7,7 @@
     .table {
         width: 100%;
         font-family: 'Chap-Light';
-        font-size: 16px;
+        font-size: 12px;
         letter-spacing: -0.02em;
         line-height: 1.825em;
         color: #000000;
@@ -18,8 +18,8 @@
             }
         }
         a {
-            font-size: 15px;
-            text-decoration: none;
+            font-size: 1em;
+            border-bottom: 0;
         }
         td {
             border: 0;
@@ -36,8 +36,8 @@
 @media (min-width: 769px) {
     .section.appartments-list {
         .table {
-            font-size: 26px;
-            a {
+            font-size: 18px;
+            a.small {
                 font-size: 0.625em;
             }
         }
@@ -47,7 +47,7 @@
 @media (min-width: 1024px) {
     .section.appartments-list {
         .table {
-            font-size: 32px;
+            font-size: 24px;
         }
     }
 }
@@ -55,7 +55,7 @@
 @media (min-width: 1216px) {
     .section.appartments-list {
         .table {
-            font-size: 40px;
+            font-size: 28px;
         }
     }
 }

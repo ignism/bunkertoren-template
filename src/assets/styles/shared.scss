@@ -3,13 +3,14 @@ body {
 }
 
 a:not(.button) {
-    transition: color 400ms ease;
-    text-decoration: underline;
+    transition: color 400ms ease, border 400ms ease;
     color: $black;
+    border-bottom: 1px solid $black;
     &:hover,
     &:focus,
     &:active {
         color: $black;
+        border-bottom: 1px solid transparent;
     }
 }
 
@@ -56,10 +57,6 @@ h1 {
     line-height: 0.84em;
     text-transform: uppercase;
     margin-bottom: 2rem;
-
-    .constructed {
-        font-family: 'SMMaxeville-Constructed';
-    }
 }
 
 .content h2,
@@ -82,6 +79,10 @@ h2 {
 .content h3,
 h3 {
     font-size: 18px;
+}
+
+.constructed {
+    font-family: 'SMMaxeville-Constructed';
 }
 
 @media (min-width: 769px) {

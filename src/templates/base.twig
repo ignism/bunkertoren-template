@@ -12,22 +12,25 @@
     <body class="{% for class in body_classes %}{{ ' ' ~ class }}{% endfor %}" data-template="base.twig">
 
         {% include './components/navbar.twig' with {
-            'logo_url' : './assets/images/logo.svg',
+            'logo': {
+                'url' : './assets/images/logo.svg',
+                'link': 'page-front.html'
+            },
             'menu' : [
                 {
                     'title': 'woningen',
-                    'link': 'appartments.html',
-                    'class': ''
+                    'link': 'page-appartments.html',
+                    'class': 'nav-link'
                 }, {
                     'title': 'over bunkertoren',
-                    'link': 'about.html',
-                    'class': ''
+                    'link': 'page-about.html',
+                    'class': 'nav-link'
                 }, {
                     'title': 'contact',
-                    'class': ''
+                    'class': 'nav-link'
                 }, {
                     'title': 'Inschrijven',
-                    'class': 'button nav-inschrijven'
+                    'class': 'nav-link button nav-inschrijven'
                 }
             ]
         } %}

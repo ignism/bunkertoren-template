@@ -49,7 +49,7 @@ navbarScene.addTo(controller)
 let footerScene = new ScrollMagic.Scene({
   triggerElement: '.footer-placeholder',
   triggerHook: 'onEnter',
-  offset: '250px'
+  offset: '100px'
 })
 footerScene.setClassToggle('#footer', 'is-active')
 
@@ -197,8 +197,6 @@ sections.forEach(section => {
 
   controller.addScene(backgroundScene)
 })
-
-console.log(sections)
 
 let footerBackgroundClass = sections[sections.length - 1].dataset.backgroundColor
 if (!footerBackgroundClass) footerBackgroundClass = 'white'

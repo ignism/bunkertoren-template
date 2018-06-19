@@ -33,7 +33,7 @@ body.has-footer-open {
 }
 
 .footer-placeholder {
-    height: 300px;
+    height: 150px;
 }
 
 @media (min-width: 769px) {
@@ -46,6 +46,12 @@ body.has-footer-open {
 }
 
 @media (max-width: 640px) {
+    body.has-footer-open {
+        .footer {
+            top: 0;
+        }
+    }
+
     .footer {
         min-height: 100vh;
         z-index: +31;

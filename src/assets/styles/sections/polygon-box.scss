@@ -33,17 +33,11 @@
         line-height: 20px;
     }
     .button {
-        background: $black;
-        font-family: 'SMMaxeville-Constructed';
+        font-family: 'SMMaxeville-Regular';
         font-size: 20px;
         height: 40px;
         padding: 0 1em;
-        color: $text-invert;
         letter-spacing: 0;
-        &:hover {
-            color: $black;
-            background: transparent;
-        }
     }
     h1 {
         font-size: 64px;

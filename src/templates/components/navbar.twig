@@ -1,8 +1,8 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container is-fluid">
         <div class="navbar-brand">
-            <a class="navbar-item" href="{% if back_link %}{{ back_link }}{% else %}front.html{% endif %}">
-                <img class="logo" src="{{ logo_url }}">
+            <a class="navbar-item" href="{% if back_link %}{{ back_link }}{% else %}{{ logo.link }}{% endif %}">
+                <img class="logo" src="{{ logo.url }}">
             </a>
 
             <a href="#" class="button mobile-inschrijven is-hidden-desktop">inschrijven</a>

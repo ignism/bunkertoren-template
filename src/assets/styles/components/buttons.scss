@@ -58,4 +58,30 @@
         }
     }
 
+    &.is-black {
+        background: transparent;
+        color: $text-invert;
+        border: 1px solid transparent;
+
+        &:hover {
+            color: $black;
+            background: transparent;
+        }
+
+        &::before {
+            background: $text-invert;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $black;
+            z-index: -2;
+        }
+    }
+
 }

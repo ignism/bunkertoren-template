@@ -68,14 +68,14 @@
                     }
                 }
             }
-            a:not(.button) {
-                text-decoration: none;
-                text-transform: uppercase;
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $black;
-                }
+        }
+        a:not(.button) {
+            border-bottom: 0;
+            text-transform: uppercase;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $black;
             }
         }
         .navbar-burger {

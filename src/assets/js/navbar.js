@@ -1,6 +1,7 @@
 let burger = document.querySelector('.navbar-burger')
 let menu = document.querySelector('.navbar-menu')
 let navbar = document.querySelector('.navbar')
+let navLinks = document.querySelectorAll('.nav-link')
 
 burger.addEventListener('click', (event) => {
   if (burger.classList.contains('is-active')) {
@@ -12,6 +13,14 @@ burger.addEventListener('click', (event) => {
     menu.classList.add('is-active')
     navbar.classList.add('is-active')
   }
+})
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    burger.classList.remove('is-active')
+    menu.classList.remove('is-active')
+    navbar.classList.remove('is-active')
+  })
 })
 
 let contact = document.querySelector('[data-nav-contact]')
