@@ -11,6 +11,7 @@
     overflow: hidden;
     transition: color 200ms ease-out;
     margin-top: -0.1em;
+    z-index: +1;
 
     &::before {
         content: '';

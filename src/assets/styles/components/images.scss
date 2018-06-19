@@ -10,6 +10,17 @@
     }
 }
 
+.gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.35;
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 1) 100%);
+}
+
+
 .is-clipped-left {
     -webkit-clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 12% 56%);
     clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 12% 56%);

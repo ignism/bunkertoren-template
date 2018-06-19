@@ -11,4 +11,5 @@ function windowLoaded () {
   require('./scroll.js')
   require('./siema.js')
   require('./constructed-h1.js')
+  require('./ui-360.js')
 }

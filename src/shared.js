@@ -9,6 +9,7 @@ import './assets/images/usp-icon-community.svg'
 import './assets/images/usp-icon-sustainability.svg'
 import './assets/images/usp-icon-location.svg'
 import './assets/images/border-polygon.svg'
+import './assets/images/button-fullscreen.svg'
 import './assets/images/drawing.png'
 
 import './assets/images/Being.png'

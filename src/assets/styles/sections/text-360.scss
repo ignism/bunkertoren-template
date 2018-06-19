@@ -1,5 +1,6 @@
 .section.text-360 {
     .clipped-360-column {
+        position: relative;
         height: 60vw;
     }
     .clipped-360 {
@@ -7,8 +8,28 @@
     }
 }
 
-.embed .play-button {
-    background-color: $red !important;
+.button-fullscreen {
+    @include transition(transform);
+
+    position: absolute;
+    bottom: 1.75rem;
+    right: 2.75rem;
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    img {
+        display: block;
+    }
+}
+
+.script-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 768px) {
