@@ -1,4 +1,6 @@
 let hs = document.querySelectorAll('h1')
+// IE fix
+hs = Array.prototype.slice.call(hs)
 
 hs.forEach(h => {
   let innerHTML = h.innerHTML.substr(1)

@@ -15,6 +15,8 @@ burger.addEventListener('click', (event) => {
   }
 })
 
+navLinks = Array.prototype.slice.call(navLinks)
+
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     burger.classList.remove('is-active')
@@ -23,10 +25,11 @@ navLinks.forEach((link) => {
   })
 })
 
-let contact = document.querySelector('[data-nav-contact]')
+let contact = document.querySelector('.navbar-contact')
 
 contact.addEventListener('click', (event) => {
   event.preventDefault()
+
   document.body.classList.toggle('has-footer-open')
 })
 

@@ -1,10 +1,63 @@
 .section.text-360 {
     .clipped-360-column {
         position: relative;
-        height: 60vw;
+        // height: 60vw;
     }
     .clipped-360 {
         height: 100%;
+    }
+
+    .text-column {
+        position: relative;
+        display: block;
+    }
+    .is-hidden-tablet .slider-navbar {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .slider-navbar {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &.is-mobile {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+    }
+    .slider-nav-spacer,
+    .slider-nav-item {
+        font-size: 20px;
+        width: calc((100% - 4.5rem) / 4);
+        margin: 0;
+        opacity: 0.3;
+
+        &.is-active {
+            opacity: 1;
+        }
+        span {
+            display: block;
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .appartment-name {
+        position: relative;
+    }
+    .subtitle-360 {
+        &-0-mobile,
+        &-1-mobile,
+        &-0,
+        &-1 {
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0;
+            transition: opacity 400ms ease;
+
+            &.is-active {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -12,8 +65,8 @@
     @include transition(transform);
 
     position: absolute;
-    bottom: 1.75rem;
-    right: 2.75rem;
+    top: calc(50% - 42px);
+    left: calc(50% - 42px);
 
     &:hover {
         transform: scale(1.1);
@@ -35,13 +88,19 @@
 @media (max-width: 768px) {
     .section.splash {
         .splash-body.splash-360 {
-            height: 65vh;
+            //height: 65vh;
         }
     }
+}
 
-    .section.text-clipped-360 {
-        .clipped-360-column {
-            height: 65vh;
+@media (min-width: 769px) {
+    .section.text-360 {
+        .text-column {
+            margin-bottom: 3rem;
         }
+        .slider-navbar {
+            position: absolute;
+            bottom: -2.25rem;
+        }        
     }
 }

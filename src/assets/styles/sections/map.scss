@@ -1,0 +1,19 @@
+.section.map {
+    .map-wrapper {
+        position: relative;
+    }
+
+    .map-link-button {
+        position: absolute;
+        bottom: 62%;
+        left: 48%;
+    }
+
+    img {
+        display: block;
+    }
+
+    a {
+        border: 0;
+    }
+}

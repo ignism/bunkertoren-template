@@ -4,4 +4,47 @@
     .plan-image {
         position: relative;
     }
+    .text-column {
+        position: relative;
+        display: block;
+    }
+
+    .slider-navbar {
+        position: relative;
+        bottom: 0.75rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &.is-mobile {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+    }
+    .slider-nav-spacer,
+    .slider-nav-item {
+        font-size: 20px;
+        width: calc((100% - 4.5rem) / 4);
+        margin: 0;
+        opacity: 0.3;
+
+        &.is-active {
+            opacity: 1;
+        }
+        span {
+            display: block;
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .section.appartment-plan {
+        .text-column {
+            margin-bottom: 3rem;
+        }
+        .slider-navbar {
+            position: absolute;
+            bottom: -2.25rem;
+        }        
+    }
 }

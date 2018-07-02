@@ -59,6 +59,25 @@
         }
     }
 
+    &.is-red-inverted {
+        background: transparent;
+        color: $red;
+        border: 1px solid $black;
+
+        &:hover {
+            color: $black;
+            background: transparent;
+            &::before {
+                top: -100%;
+            }
+        }
+
+        &::before {
+            top: 0;
+            background: $black;
+        }
+    }
+
     &.is-black {
         background: transparent;
         color: $text-invert;

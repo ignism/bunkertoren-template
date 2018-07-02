@@ -7,7 +7,7 @@
     .table {
         width: 100%;
         font-family: 'Chap-Light';
-        font-size: 12px;
+        font-size: 18px;
         letter-spacing: -0.02em;
         line-height: 1.825em;
         color: #000000;
@@ -29,6 +29,18 @@
         }
         tr {
             border-bottom: 1px solid black;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .section.appartments-list {
+        .table {
+            font-size: 12px;
+        }
+
+        .is-hidden-small-mobile {
+            display: none !important;
         }
     }
 }

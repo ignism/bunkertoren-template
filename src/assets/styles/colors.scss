@@ -4,6 +4,7 @@ $green: #D3E8D5;
 $black: #000000;
 $gold: #DEC6A1;
 $light_gold: #F5E1C2;
+$gray: #D3CAC7;
 
 .red,
 [data-background-color="red"] {
@@ -28,4 +29,9 @@ $light_gold: #F5E1C2;
 .light-gold,
 [data-background-color="light-gold"] {
     background-color: $light_gold;
+}
+
+.gray,
+[data-background-color="gray"] {
+    background-color: $gray;
 }

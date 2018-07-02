@@ -18,3 +18,9 @@
         width: 50%;
     }
 }
+
+@media (max-width: 640px) {
+.section.appartment-details .is-6-mobile {
+        width: 100%;
+    }
+}

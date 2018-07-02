@@ -1,3 +1,11 @@
+body.scrolled-footer-open {
+    .navbar {
+        top: -80px !important;
+        transition-duration: 0;
+    }
+}
+
+
 .navbar {
     @include transition(top, background);
 
@@ -62,6 +70,7 @@
             &.is-active {
                 background: $red;
                 .control {
+                    text-align: center;
                     margin: 20px;
                     a {
                         font-size: 30px;

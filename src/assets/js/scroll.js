@@ -46,50 +46,70 @@ navbarScene.addTo(controller)
 
 // FOOTER START ----------------------------------------------------------
 
+let f = document.getElementById('footer')
+let fPlaceholder = document.querySelector('.footer-placeholder')
+
+fPlaceholder.style.height = f.clientHeight + 'px'
+let offsetPlaceholder = (f.clientHeight / 2) + 'px'
+
 let footerScene = new ScrollMagic.Scene({
   triggerElement: '.footer-placeholder',
   triggerHook: 'onEnter',
-  offset: '100px'
+  offset: offsetPlaceholder
 })
 footerScene.setClassToggle('#footer', 'is-active')
 
+let footerBodyScene = new ScrollMagic.Scene({
+  triggerElement: '.footer',
+  triggerHook: 'onEnter'
+})
+footerBodyScene.setClassToggle('body', 'scrolled-footer-open')
+
 footerScene.addTo(controller)
+footerBodyScene.addTo(controller)
 
 // FOOTER END ------------------------------------------------------------
 
 // FLOATER START ---------------------------------------------------------
 
-let floatingMessage
-let triggerFrom
-let triggerTo
-
 if (document.body.classList.contains('has-floating-message')) {
-  floatingMessage = document.querySelector('.floating-message')
-  triggerFrom = document.querySelector('.float-trigger[data-trigger-from]')
-  triggerTo = document.querySelector('.float-trigger[data-trigger-to]')
+  let floatWrappers = document.querySelectorAll('.float-wrapper')
+  floatWrappers = Array.prototype.slice.call(floatWrappers)
 
-  let tween = TweenMax.fromTo(floatingMessage, 1,
-    { marginTop: '-50px' },
-    { marginTop: '50px', ease: Circ.easeOut } // eslint-disable-line
-  )
+  floatWrappers.forEach(wrapper => {
+    let floatingMessage
+    let triggerFrom
+    let triggerTo
 
-  let floatingScene1 = new ScrollMagic.Scene({
-    triggerElement: triggerFrom,
-    duration: getUnpinPos(triggerFrom, triggerTo, floatingMessage)
+    floatingMessage = wrapper.querySelector('.floating-message')
+    triggerFrom = wrapper.querySelector('.float-trigger[data-trigger-from]')
+    triggerTo = wrapper.querySelector('.float-trigger[data-trigger-to]')
+
+    let tween = TweenMax.fromTo(floatingMessage, 1,
+      { marginTop: '-50px' },
+      { marginTop: '50px', ease: Circ.easeOut } // eslint-disable-line
+    )
+
+    let floatingScene1 = new ScrollMagic.Scene({
+      triggerElement: triggerFrom,
+      duration: getUnpinPos(triggerFrom, triggerTo, floatingMessage)
+    })
+    floatingScene1.setPin(floatingMessage)
+    floatingScene1.on('progress', function (event) {
+      onProgress(event, triggerFrom, triggerTo, floatingMessage)
+    })
+    floatingScene1.setTween(tween)
+
+    let floatingScene2 = new ScrollMagic.Scene({
+      duration: 0,
+      triggerElement: triggerFrom
+    })
+
+    floatingScene2.setClassToggle(floatingMessage, 'is-active') // add class toggle
+
+    controller.addScene(floatingScene1)
+    controller.addScene(floatingScene2)
   })
-  floatingScene1.setPin(floatingMessage)
-  floatingScene1.on('progress', onProgress)
-  floatingScene1.setTween(tween)
-
-  let floatingScene2 = new ScrollMagic.Scene({
-    duration: 0,
-    triggerElement: triggerFrom
-  })
-
-  floatingScene2.setClassToggle(floatingMessage, 'is-active') // add class toggle
-
-  controller.addScene(floatingScene1)
-  controller.addScene(floatingScene2)
 }
 
 function getUnpinPos (from, to, self) {
@@ -97,8 +117,8 @@ function getUnpinPos (from, to, self) {
   return pos
 }
 
-function onProgress (event) {
-  event.currentTarget.duration(getUnpinPos(triggerFrom, triggerTo, floatingMessage))
+function onProgress (event, from, to, message) {
+  event.currentTarget.duration(getUnpinPos(from, to, message))
 }
 
 // FLOATER END -----------------------------------------------------------
@@ -139,6 +159,8 @@ function getUrlVariables () {
 // APPEAR START ----------------------------------------------------------
 
 let appearElements = document.querySelectorAll('[data-appear]')
+// IE fix
+appearElements = Array.prototype.slice.call(appearElements)
 
 if (appearElements.length > 0) {
   // create containers
@@ -146,6 +168,7 @@ if (appearElements.length > 0) {
     let parent = element.parentElement
 
     let clone = element.cloneNode(true)
+    clone.className = ''
 
     let delay = element.dataset.appearDelay
 
@@ -159,10 +182,10 @@ if (appearElements.length > 0) {
     animator.style.transitionDelay = delay
 
     let container = document.createElement('div')
-    container.classList = element.classList
+    container.className = element.className
 
     container.classList.add('appear-container')
-    element.classList = ''
+    element.className = ''
 
     container.appendChild(spacer)
     container.appendChild(animator)
@@ -171,7 +194,10 @@ if (appearElements.length > 0) {
   })
 
   let animators = document.querySelectorAll('.appear-animator')
+  // IE fix
+  animators = Array.prototype.slice.call(animators)
   // attach scroll effects
+
   animators.forEach(element => {
     let appearScene = new ScrollMagic.Scene({
       duration: 0,

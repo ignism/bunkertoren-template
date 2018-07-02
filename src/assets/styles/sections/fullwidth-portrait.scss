@@ -3,6 +3,10 @@
     max-width: 1912px;
     margin: auto;
     position: relative;
+
+    .background-image {
+        min-height: 100vh;
+    }
     .fullwidth-portrait-image {
         width: 100%;
         height: auto;
@@ -22,6 +26,8 @@
         top: 10%;
         opacity: 0;
         transition: opacity 400ms ease;
+        max-width: calc(100vw - 112px);
+
         p {
             max-width: 400px;
             margin-bottom: 2rem;
@@ -33,11 +39,13 @@
         }
         h2 {
             color: $text-invert;
+            font-size: 25px;
         }
         h1,
         h2 {
             line-height: 1.5em;
             transition: line-height 400ms ease;
+            max-width: 80%;
         }
         &.is-active {
             opacity: 1;
@@ -63,15 +71,38 @@
     }
 }
 
+@media (max-width: 640px) {
+    .section.fullwidth-portrait {
+        .floating-message {
+            h2 {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
 @media (min-width: 769px) {
     .section.fullwidth-portrait {
         .floating-message {
             max-width: 75vw;
             h1 {
-                font-size: 87px;
+                font-size: 80px;
             }
             h2 {
-                font-size: 25px;
+                font-size: 50px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) { 
+    .section.fullwidth-portrait {
+        .floating-message {
+            max-width: 75vw;
+            h1,
+            h2 {
+                max-width: 600px;
             }
         }
     }

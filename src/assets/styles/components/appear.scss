@@ -19,7 +19,8 @@
     position: absolute;
     top: 0;
     left: 0;
-
+    width: 100%;
+    
     transition: margin-top 800ms, opacity 400ms;
     opacity: 0;
     margin-top: 2rem;

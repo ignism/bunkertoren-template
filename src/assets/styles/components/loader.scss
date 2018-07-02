@@ -1,0 +1,112 @@
+.page-loader {
+    background: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 9999;
+    opacity: 0;
+    @include transition(opacity);
+    &.is-active {
+        display: block;
+    }
+    &.is-visible {
+        opacity: 1;
+    }
+    .content {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+}
+
+.bunker-loader {
+    position: relative;
+    
+    .part {
+      position: absolute;
+      background: black;
+      border: 1px solid white;
+      animation: reveal 2400ms infinite;
+      opacity: 0;
+    }
+    .part:nth-child(7) {
+      top: 64px;
+      height: 8px;
+      width: 66px;
+      -webkit-clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      animation-delay: 0;
+    }
+    .part:nth-child(6) {
+      top: 56px;
+      margin-left: 6px;
+      height: 8px;
+      width: 60px;
+      -webkit-clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      animation-delay: 200ms;
+    }
+    .part:nth-child(5) {
+      top: 48px;
+      margin-left: 12px;
+      height: 8px;
+      width: 54px;
+      -webkit-clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      animation-delay: 400ms;
+    }
+    .part:nth-child(4) {
+      top: 36px;
+      margin-left: 18px;
+      height: 12px;
+      width: 48px;
+      animation-delay: 600ms;
+    }
+    .part:nth-child(3) {
+      top: 24px;
+      margin-left: 18px;
+      height: 12px;
+      width: 48px;
+      animation-delay: 800ms;
+    }
+    .part:nth-child(2) {
+      top: 12px;
+      margin-left: 18px;
+      height: 12px;
+      width: 48px;
+      animation-delay: 1000ms;
+    }
+    .part:nth-child(1) {
+      top: 0px;
+      margin-left: 18px;
+      height: 12px;
+      width: 48px;
+      animation-delay: 1200ms;
+    }
+  }
+  
+  @keyframes reveal {
+    0% {
+      margin-top:-12px;
+      opacity: 0;
+    }
+    33% {
+      margin-top: 0;
+      opacity: 1;
+    }
+    66% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

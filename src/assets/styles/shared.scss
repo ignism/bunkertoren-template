@@ -23,6 +23,10 @@ ul, .content ul {
     padding: 2rem;
 }
 
+.columns.header {
+    padding: 1.5rem 0;
+}
+
 .has-extra-gutter {
     &-left {
         margin-left: 1rem;
@@ -42,6 +46,9 @@ p, h1, h2, h3,
     color: $black;
 }
 
+p {
+    margin-bottom: 2rem;
+}
 p, a {
     font-family: 'Chap-Regular';
     font-size: 15px;
@@ -53,7 +60,7 @@ p, a {
 .content h1,
 h1 {
     font-family: 'SMMaxeville-Regular';
-    font-size: 43.5px;
+    font-size: 40px;
     letter-spacing: -0.01em;
     line-height: 0.84em;
     text-transform: uppercase;
@@ -67,7 +74,7 @@ h2 {
     letter-spacing: -0.0125em;
     line-height: 0.9375em;
     margin-bottom: 2rem;
-    max-width: 620px;
+    max-width: 90%;
     &::before {
         content: '\2014 ';
     }
@@ -77,6 +84,10 @@ h2 {
     }
 }
 
+.slider-nav-item {
+    cursor: pointer;
+}
+
 .content h3,
 h3 {
     font-size: 18px;
@@ -84,6 +95,13 @@ h3 {
 
 .constructed {
     font-family: 'SMMaxeville-Constructed';
+}
+
+@media (max-width: 640px) {
+    .content h2,
+    h2 {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 769px) {
@@ -118,7 +136,7 @@ h3 {
 
 @media (min-width: 1216px) {
     .page-front h1 {
-            font-size: 87px;
+            font-size: 80px;
     }
 }
 
