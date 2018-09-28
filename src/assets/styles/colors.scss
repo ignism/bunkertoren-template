@@ -5,7 +5,6 @@ $black: #000000;
 $gold: #DEC6A1;
 $light_gold: #F5E1C2;
 $gray: #D3CAC7;
-
 .red,
 [data-background-color="red"] {
     background-color: $red;
@@ -34,4 +33,40 @@ $gray: #D3CAC7;
 .gray,
 [data-background-color="gray"] {
     background-color: $gray;
+}
+
+.white,
+[data-background-color="white"] {
+    background-color: $white;
+}
+
+.fill {
+    &-red path {
+        fill: $red;
+        stroke: $red;
+    }
+    &-light-red path {
+        fill: $ebb;
+        stroke: $ebb;
+    }
+    &-light-green path {
+        fill: $green;
+        stroke: $green;
+    }
+    &-gold path {
+        fill: $gold;
+        stroke: $gold;
+    }
+    &-light-gold path {
+        fill: $light_gold;
+        stroke: $light_gold;
+    }
+    &-gray path {
+        fill: $gray;
+        stroke: $gray;
+    }
+    &-white path {
+        fill: $white;
+        stroke: $white;
+    }
 }

@@ -3,6 +3,44 @@
         position: relative;
     }
 
+    .text-column {
+        position: relative;
+    }
+
+    .slider-navbar {
+        position: absolute;
+        bottom: 0.75rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: +1;
+        &.is-mobile {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        &.is-double.top {
+            bottom: 3.25rem;
+        }
+    }
+    .slider-nav-spacer,
+    .slider-nav-item {
+        font-size: 20px;
+        //width: calc((100vw - 112px - 48px) / 12);
+        width: calc((100% - 4.5rem) / 4);
+        margin: 0;
+        opacity: 0.3;
+        //margin-right: 0.75rem;
+        &.is-active {
+            opacity: 1;
+        }
+        span {
+            display: block;
+            border-bottom: 1px solid black;
+            //margin-right: 1.5rem;
+        }
+    }
+
     .map-link-button {
         position: absolute;
         bottom: 62%;

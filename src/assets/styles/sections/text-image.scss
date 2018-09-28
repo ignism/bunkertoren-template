@@ -46,6 +46,10 @@
                     position: relative;
                     margin-bottom: 4rem;
                 }
+
+                &.is-double.top {
+                    bottom: 3.25rem;
+                }
             }
             .slider-nav-spacer,
             .slider-nav-item {
@@ -107,7 +111,7 @@
                 color: #000000;
                 letter-spacing: 0;
                 line-height: 25px;
-                margin-bottom: 4rem;
+                margin-bottom: 6rem;
             }
         }
     }

@@ -30,6 +30,14 @@
         tr {
             border-bottom: 1px solid black;
         }
+
+        tr.is-locked {
+            color: $gray;
+
+            &:hover {
+                color: $gray; 
+            }
+        }
     }
 }
 
@@ -49,7 +57,7 @@
     .section.appartments-list {
         .table {
             font-size: 18px;
-            a.small {
+            a.small, span.small {
                 font-size: 0.625em;
             }
         }

@@ -17,14 +17,30 @@ wrappers.forEach(wrapper => {
       let navbar = child.querySelector('.slider-navbar')
 
       if (navbar) {
-        let navBarItems = navbar.querySelectorAll('.slider-nav-item')
-        // IE fix
-        navBarItems = Array.prototype.slice.call(navBarItems)
-        navBarItems.forEach(item => {
-          navItems.push(item)
-        })
+        if (navbar.classList.contains('is-double')) {
+          let navbarTop = child.querySelector('.slider-navbar.top')
+          let navbarBottom = child.querySelector('.slider-navbar.bottom')
+          let navBarItemsTop = navbarTop.querySelectorAll('.slider-nav-item')
+          let navBarItemsBottom = navbarBottom.querySelectorAll('.slider-nav-item')
 
-        console.log(navBarItems)
+          // IE fix
+          navBarItemsTop = Array.prototype.slice.call(navBarItemsTop)
+          navBarItemsTop.forEach(item => {
+            navItems.push(item)
+          })
+
+          navBarItemsBottom = Array.prototype.slice.call(navBarItemsBottom)
+          navBarItemsBottom.forEach(item => {
+            navItems.push(item)
+          })
+        } else {
+          let navBarItems = navbar.querySelectorAll('.slider-nav-item')
+          // IE fix
+          navBarItems = Array.prototype.slice.call(navBarItems)
+          navBarItems.forEach(item => {
+            navItems.push(item)
+          })
+        }
       }
     }
   }
@@ -50,6 +66,14 @@ wrappers.forEach(wrapper => {
       siema.goTo(index)
     })
   })
+
+  if (wrapper.classList.contains('is-automatic')) {
+    let intervalDelay = wrapper.dataset.sliderDelay
+    window.setInterval(() => {
+      siema.next()
+      console.log('tick')
+    }, intervalDelay)
+  }
 
   function setActive () {
     let index = siema.currentSlide
@@ -87,8 +111,6 @@ wrappers.forEach(wrapper => {
           let id = nav.dataset.sliderId
           let subtitle = document.querySelector('.slide-subtitle-' + id + '-' + nav.dataset.sliderIndex)
           let subtitleMobile = document.querySelector('.slide-subtitle-' + id + '-' + nav.dataset.sliderIndex + '-mobile')
-
-          console.log(subtitle)
 
           if (subtitle != null) {
             subtitle.classList.remove('is-active')

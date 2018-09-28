@@ -6,6 +6,7 @@ body.has-footer-open {
 
 .footer {
     @include transition(all);
+    box-sizing: border-box;
     background-color: $gold;
     position: fixed;
     top: auto;

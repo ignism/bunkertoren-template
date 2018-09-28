@@ -11,6 +11,7 @@
 @import './components/appear.scss';
 @import './components/fullscreen-360.scss';
 @import './components/loader.scss';
+@import './components/slider.scss';
 @import './sections/section.scss';
 @import './sections/splash.scss';
 @import './sections/text-image.scss';
@@ -25,3 +26,57 @@
 @import './sections/appartment-plan.scss';
 @import './sections/appartment-details.scss';
 @import './sections/map.scss';
+
+.app-downloads .button-group:first-of-type {
+    padding-top: 2rem;
+}
+
+.app-downloads .button-group .button {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .app-downloads .button-group {
+        display: block;
+    }
+    .app-downloads .button-group .level-item {
+        width: 100%;
+        display: block;
+    }
+    .app-downloads .button-group .button {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .app-downloads .button-group {
+        display: block;
+    }
+    .app-downloads .button-group .level-item {
+        width: 100%;
+        display: block;
+    }
+    .app-downloads .button-group .button {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-downloads .button-group {
+        display: flex;
+    }
+    .app-downloads .button-group .level-item {
+        width: auto;
+        display: flex;
+    }
+    .app-downloads .button-group .button {
+        width: auto;
+        margin: 0;
+    }
+}

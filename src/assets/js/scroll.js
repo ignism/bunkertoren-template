@@ -49,6 +49,8 @@ navbarScene.addTo(controller)
 let f = document.getElementById('footer')
 let fPlaceholder = document.querySelector('.footer-placeholder')
 
+console.log(f.height)
+
 fPlaceholder.style.height = f.clientHeight + 'px'
 let offsetPlaceholder = (f.clientHeight / 2) + 'px'
 

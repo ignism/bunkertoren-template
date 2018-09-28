@@ -11,6 +11,7 @@ body.scrolled-footer-open {
 
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    z-index: 10000 !important;
 
     &.is-pushed-up {
         top: -60px;
